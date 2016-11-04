@@ -35,6 +35,7 @@ namespace Hangout.Controllers
         {
 
         }
+        [HttpGet]
         public string TestService()
         {
             return "Ankur";
