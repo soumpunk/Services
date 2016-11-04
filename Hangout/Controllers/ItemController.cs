@@ -35,5 +35,9 @@ namespace Hangout.Controllers
         {
 
         }
+        public string TestService()
+        {
+            return "Ankur";
+        }
     }
 }
