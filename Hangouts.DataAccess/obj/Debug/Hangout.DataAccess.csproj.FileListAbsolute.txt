@@ -7,3 +7,10 @@ E:\Sample\WineHangoutz\Services\Hangouts.DataAccess\bin\Debug\Hangouts.DataAcces
 E:\Sample\WineHangoutz\Services\Hangouts.DataAccess\obj\Debug\Hangout.DataAccess.csprojResolveAssemblyReference.cache
 E:\Sample\WineHangoutz\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.dll
 E:\Sample\WineHangoutz\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.pdb
+F:\SAVVY\Services\Hangouts.DataAccess\bin\Debug\Hangouts.DataAccess.dll
+F:\SAVVY\Services\Hangouts.DataAccess\bin\Debug\Hangouts.DataAccess.pdb
+F:\SAVVY\Services\Hangouts.DataAccess\obj\Debug\Hangout.DataAccess.csprojResolveAssemblyReference.cache
+F:\SAVVY\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.dll
+F:\SAVVY\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.pdb
+F:\SAVVY\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.dll
+F:\SAVVY\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.pdb

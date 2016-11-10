@@ -44,6 +44,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ItemService.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hangouts.DataAccess\Hangout.DataAccess.csproj">
+      <Project>{9db35b11-6740-4288-9877-6bf94cfa7b2c}</Project>
+      <Name>Hangout.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hangouts.Models\Hangout.Models.csproj">
+      <Project>{BCC0D851-7F5D-4CDA-B305-AB3C497360DA}</Project>
+      <Name>Hangout.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

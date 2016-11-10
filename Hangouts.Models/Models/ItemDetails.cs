@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hangouts.Models.Models
+{
+    public class ItemDetails : BaseItem
+    {
+        public string Sub_Region { get; set; }
+        public string GrapeVerietal { get; set; }
+        public double AvgRating { get; set; }
+        public double UsersRating { get; set; }
+        public string Description { get; set; }
+        public string Type { get; set; }
+        public string BottleSize { get; set; }
+        public string LargeImageUrl { get; set; }
+        public string Alcohol_Levels { get; set; }
+        public string Food_Pairings { get; set; }
+        public string ServingAt { get; set; }
+        public string Tasting_Notes { get; set; }
+        public string WineMakerNotes { get; set; }
+        public string TechnicalNotes { get; set; }
+        public string Notes { get; set; }
+        public string OtherText { get; set; }
+        public string Producer { get; set; }
+        List<Review> Reviews { get; set; }
+        List<Rating> Rating { get; set; }
+    }
+}

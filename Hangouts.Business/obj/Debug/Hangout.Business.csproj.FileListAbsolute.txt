@@ -3,3 +3,12 @@ E:\Sample\WineHangoutz\Services\Hangouts.Business\bin\Debug\Hangouts.Business.pd
 E:\Sample\WineHangoutz\Services\Hangouts.Business\obj\Debug\Hangout.Business.csprojResolveAssemblyReference.cache
 E:\Sample\WineHangoutz\Services\Hangouts.Business\obj\Debug\Hangouts.Business.dll
 E:\Sample\WineHangoutz\Services\Hangouts.Business\obj\Debug\Hangouts.Business.pdb
+F:\SAVVY\Services\Hangouts.Business\bin\Debug\Hangouts.Business.dll
+F:\SAVVY\Services\Hangouts.Business\bin\Debug\Hangouts.Business.pdb
+F:\SAVVY\Services\Hangouts.Business\obj\Debug\Hangout.Business.csprojResolveAssemblyReference.cache
+F:\SAVVY\Services\Hangouts.Business\obj\Debug\Hangouts.Business.dll
+F:\SAVVY\Services\Hangouts.Business\obj\Debug\Hangouts.Business.pdb
+F:\SAVVY\Services\Hangouts.Business\bin\Debug\Hangouts.DataAccess.dll
+F:\SAVVY\Services\Hangouts.Business\bin\Debug\Hangouts.Models.dll
+F:\SAVVY\Services\Hangouts.Business\bin\Debug\Hangouts.DataAccess.pdb
+F:\SAVVY\Services\Hangouts.Business\bin\Debug\Hangouts.Models.pdb

@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hangouts.Business
+namespace Hangouts.Models
 {
-    public interface IItemService
+    public class ItemDetailsResponse: BaseServiceResponse
     {
-        ItemListResponse GetItemList(int plantFinal, int cardID, int customerID);
+        public IList<ItemDetailsResponse> ItemDetails { get; set; }
     }
 }
