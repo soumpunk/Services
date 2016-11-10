@@ -24,19 +24,6 @@ namespace Hangout.Controllers
         {
             
         }
-        public void GetItemComments(int objectId)
-        {
-
-        }
-
-        public void AddComments(int objectId)
-        {
-
-        }
-        [HttpGet]
-        public string TestService(int objectId)
-        {
-            return "Ankur Dubey";
-        }
+        
     }
 }

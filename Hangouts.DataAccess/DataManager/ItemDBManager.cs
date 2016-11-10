@@ -26,6 +26,7 @@ namespace Hangouts.DataAccess
             {
                 ISingleResult<RetrieveAvailableWinesResult> result =
                 DBContext.RetrieveAvailableWines(plantFinal, cardID, customerID);
+            
                 return result.ToList();
             }
             catch (Exception ex)
