@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hangouts.Models
+namespace Hangout.Models
 {
     public class ItemDetailsResponse: BaseServiceResponse
     {
-        public IList<ItemDetailsResponse> ItemDetails { get; set; }
+        public IList<ItemDetails> ItemDetails { get; set; }
     }
 }

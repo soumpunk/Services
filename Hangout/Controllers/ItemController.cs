@@ -13,17 +13,34 @@ namespace Hangout.Controllers
     {
         public ItemListResponse GetItemList(int objectId)
         {
-            int cardID = 0, customerID = 0;
             ItemListResponse resp = new ItemListResponse();
             IItemService itemService = new ItemService();
-            resp = itemService.GetItemList(objectId, cardID, customerID);
+            resp = itemService.GetItemList(objectId);
             return resp;
         }
 
-        public void GetItemDetails(int objectId)
+        public ItemDetailsResponse GetItemDetails(int objectId)
         {
-            
+            ItemDetailsResponse resp = new ItemDetailsResponse();
+            IItemService itemService = new ItemService();
+            resp = itemService.GetItemDetails(objectId);
+            return resp;
         }
-        
+
+        public ItemRatingResponse GetItemRatingsSKU(int objectId)
+        {
+            ItemRatingResponse resp = new ItemRatingResponse();
+            IItemService itemService = new ItemService();
+            resp = itemService.GetRatingsSKU(objectId);
+            return resp;
+        }
+
+        public ItemRatingResponse GetItemRatingsUID(int objectId)
+        {
+            ItemRatingResponse resp = new ItemRatingResponse();
+            IItemService itemService = new ItemService();
+            resp = itemService.GetRatingsUID(objectId);
+            return resp;
+        }
     }
 }

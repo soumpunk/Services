@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Hangout.Models
 {
-    public class Item: BaseItem
+    public class ItemRatingResponse: BaseServiceResponse
     {
-        
+        public IList<Rating> Ratings { get; set; }
     }
 }

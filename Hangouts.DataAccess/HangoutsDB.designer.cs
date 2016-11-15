@@ -62,18 +62,300 @@ namespace Hangouts.DataAccess
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveAvailableWines")]
-		public ISingleResult<RetrieveAvailableWinesResult> RetrieveAvailableWines([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlantFinal", DbType="Int")] System.Nullable<int> plantFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CardID", DbType="Int")] System.Nullable<int> cardID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CustomerID", DbType="Int")] System.Nullable<int> customerID)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveWineRatings")]
+		public ISingleResult<RetrieveWineRatingsResult> RetrieveWineRatings([global::System.Data.Linq.Mapping.ParameterAttribute(Name="WineID", DbType="Int")] System.Nullable<int> wineID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CardID", DbType="Int")] System.Nullable<int> cardID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CustomerID", DbType="Int")] System.Nullable<int> customerID)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), plantFinal, cardID, customerID);
-			return ((ISingleResult<RetrieveAvailableWinesResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), wineID, cardID, customerID);
+			return ((ISingleResult<RetrieveWineRatingsResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveWineReviews")]
-		public ISingleResult<RetrieveWineReviewsResult> RetrieveWineReviews([global::System.Data.Linq.Mapping.ParameterAttribute(Name="WineID", DbType="Int")] System.Nullable<int> wineID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CardID", DbType="Int")] System.Nullable<int> cardID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CustomerID", DbType="Int")] System.Nullable<int> customerID)
+		public ISingleResult<RetrieveWineReviewsResult> RetrieveWineReviews([global::System.Data.Linq.Mapping.ParameterAttribute(Name="WineID", DbType="Int")] System.Nullable<int> wineID)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), wineID, cardID, customerID);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), wineID);
 			return ((ISingleResult<RetrieveWineReviewsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveAvailableWines")]
+		public ISingleResult<RetrieveAvailableWinesResult> RetrieveAvailableWines([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlantFinal", DbType="Int")] System.Nullable<int> plantFinal)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), plantFinal);
+			return ((ISingleResult<RetrieveAvailableWinesResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveWineDetails")]
+		public ISingleResult<RetrieveWineDetailsResult> RetrieveWineDetails([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SKU", DbType="Int")] System.Nullable<int> sKU)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sKU);
+			return ((ISingleResult<RetrieveWineDetailsResult>)(result.ReturnValue));
+		}
+	}
+	
+	public partial class RetrieveWineRatingsResult
+	{
+		
+		private int _RatingStars;
+		
+		private string _RatingText;
+		
+		private System.Nullable<int> _Date;
+		
+		private System.Nullable<int> _UserName;
+		
+		private int _SKU;
+		
+		private string _Name;
+		
+		private int _Vintage;
+		
+		private string _Region;
+		
+		private string _Country;
+		
+		public RetrieveWineRatingsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RatingStars", DbType="Int NOT NULL")]
+		public int RatingStars
+		{
+			get
+			{
+				return this._RatingStars;
+			}
+			set
+			{
+				if ((this._RatingStars != value))
+				{
+					this._RatingStars = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RatingText", DbType="NVarChar(MAX)")]
+		public string RatingText
+		{
+			get
+			{
+				return this._RatingText;
+			}
+			set
+			{
+				if ((this._RatingText != value))
+				{
+					this._RatingText = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Int")]
+		public System.Nullable<int> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="Int")]
+		public System.Nullable<int> UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SKU", DbType="Int NOT NULL")]
+		public int SKU
+		{
+			get
+			{
+				return this._SKU;
+			}
+			set
+			{
+				if ((this._SKU != value))
+				{
+					this._SKU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vintage", DbType="Int NOT NULL")]
+		public int Vintage
+		{
+			get
+			{
+				return this._Vintage;
+			}
+			set
+			{
+				if ((this._Vintage != value))
+				{
+					this._Vintage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string Region
+		{
+			get
+			{
+				return this._Region;
+			}
+			set
+			{
+				if ((this._Region != value))
+				{
+					this._Region = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string Country
+		{
+			get
+			{
+				return this._Country;
+			}
+			set
+			{
+				if ((this._Country != value))
+				{
+					this._Country = value;
+				}
+			}
+		}
+	}
+	
+	public partial class RetrieveWineReviewsResult
+	{
+		
+		private int _ReviewerId;
+		
+		private System.Nullable<int> _ReviewerName;
+		
+		private string _CommentsTitle;
+		
+		private string _Text;
+		
+		private int _Points;
+		
+		public RetrieveWineReviewsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReviewerId", DbType="Int NOT NULL")]
+		public int ReviewerId
+		{
+			get
+			{
+				return this._ReviewerId;
+			}
+			set
+			{
+				if ((this._ReviewerId != value))
+				{
+					this._ReviewerId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReviewerName", DbType="Int")]
+		public System.Nullable<int> ReviewerName
+		{
+			get
+			{
+				return this._ReviewerName;
+			}
+			set
+			{
+				if ((this._ReviewerName != value))
+				{
+					this._ReviewerName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CommentsTitle", DbType="NVarChar(MAX)")]
+		public string CommentsTitle
+		{
+			get
+			{
+				return this._CommentsTitle;
+			}
+			set
+			{
+				if ((this._CommentsTitle != value))
+				{
+					this._CommentsTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Text", DbType="NVarChar(MAX)")]
+		public string Text
+		{
+			get
+			{
+				return this._Text;
+			}
+			set
+			{
+				if ((this._Text != value))
+				{
+					this._Text = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Points", DbType="Int NOT NULL")]
+		public int Points
+		{
+			get
+			{
+				return this._Points;
+			}
+			set
+			{
+				if ((this._Points != value))
+				{
+					this._Points = value;
+				}
+			}
 		}
 	}
 	
@@ -265,7 +547,7 @@ namespace Hangouts.DataAccess
 		}
 	}
 	
-	public partial class RetrieveWineReviewsResult
+	public partial class RetrieveWineDetailsResult
 	{
 		
 		private int _SKUId;
@@ -314,7 +596,7 @@ namespace Hangouts.DataAccess
 		
 		private string _ReviewComments;
 		
-		public RetrieveWineReviewsResult()
+		public RetrieveWineDetailsResult()
 		{
 		}
 		

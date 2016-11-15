@@ -49,6 +49,7 @@
     <Compile Include="Response\BaseServiceResponse.cs" />
     <Compile Include="Response\ItemDetailsResponse.cs" />
     <Compile Include="Response\ItemListResponse.cs" />
+    <Compile Include="Response\ItemRatingResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Request\" />

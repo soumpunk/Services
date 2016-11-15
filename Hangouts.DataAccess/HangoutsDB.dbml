@@ -1,9 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Hangouts" Class="HangoutsDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=108.58.151.10,1433;Initial Catalog=Hangouts;Persist Security Info=True;User ID=ankur" SettingsObjectName="Hangouts.DataAccess.Properties.Settings" SettingsPropertyName="HangoutsConnectionString" Provider="System.Data.SqlClient" />
-  <Function Name="dbo.RetrieveAvailableWines" Method="RetrieveAvailableWines">
-    <Parameter Name="PlantFinal" Parameter="plantFinal" Type="System.Int32" DbType="Int" />
+  <Function Name="dbo.RetrieveWineRatings" Method="RetrieveWineRatings">
+    <Parameter Name="WineID" Parameter="wineID" Type="System.Int32" DbType="Int" />
     <Parameter Name="CardID" Parameter="cardID" Type="System.Int32" DbType="Int" />
     <Parameter Name="CustomerID" Parameter="customerID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="RetrieveWineRatingsResult">
+      <Column Name="RatingStars" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RatingText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserName" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SKU" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Vintage" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Region" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.RetrieveWineReviews" Method="RetrieveWineReviews">
+    <Parameter Name="WineID" Parameter="wineID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="RetrieveWineReviewsResult">
+      <Column Name="ReviewerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReviewerName" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommentsTitle" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Points" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.RetrieveAvailableWines" Method="RetrieveAvailableWines">
+    <Parameter Name="PlantFinal" Parameter="plantFinal" Type="System.Int32" DbType="Int" />
     <ElementType Name="RetrieveAvailableWinesResult">
       <Column Name="SKU" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
@@ -17,11 +41,9 @@
       <Column Name="SmallImageUrl" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.RetrieveWineReviews" Method="RetrieveWineReviews">
-    <Parameter Name="WineID" Parameter="wineID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="CardID" Parameter="cardID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="CustomerID" Parameter="customerID" Type="System.Int32" DbType="Int" />
-    <ElementType Name="RetrieveWineReviewsResult">
+  <Function Name="dbo.RetrieveWineDetails" Method="RetrieveWineDetails">
+    <Parameter Name="SKU" Parameter="sKU" Type="System.Int32" DbType="Int" />
+    <ElementType Name="RetrieveWineDetailsResult">
       <Column Name="SKUId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="SKU" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />

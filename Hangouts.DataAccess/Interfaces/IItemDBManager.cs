@@ -9,6 +9,9 @@ namespace Hangouts.DataAccess
 {
     public interface IItemDBManager
     {
-        IList<RetrieveAvailableWinesResult> GetLists(int plantFinal,int cardID,int customerID);
+        IList<RetrieveAvailableWinesResult> GetLists(int plantFinal);
+        IList<RetrieveWineDetailsResult> GetDetails(int sku);
+        IList<RetrieveWineReviewsResult> GetRatingsSKU(int sku);
+        IList<RetrieveWineRatingsResult> GetRatingsUID(int uid);
     }
 }

@@ -20,13 +20,12 @@ namespace Hangouts.DataAccess
             DBContext = new DataAccess.HangoutsDBDataContext(connection);
         }
 
-        public IList<RetrieveAvailableWinesResult> GetLists(int plantFinal, int cardID, int customerID)
+        public IList<RetrieveWineDetailsResult> GetDetails(int sku)
         {
             try
             {
-                ISingleResult<RetrieveAvailableWinesResult> result =
-                DBContext.RetrieveAvailableWines(plantFinal, cardID, customerID);
-            
+                ISingleResult<RetrieveWineDetailsResult> result =
+                DBContext.RetrieveWineDetails(sku);
                 return result.ToList();
             }
             catch (Exception ex)
@@ -34,5 +33,29 @@ namespace Hangouts.DataAccess
                 return null;
             }
         }
+
+        public IList<RetrieveAvailableWinesResult> GetLists(int plantFinal)
+        {
+            try
+            {
+                ISingleResult<RetrieveAvailableWinesResult> result =
+                DBContext.RetrieveAvailableWines(plantFinal);            
+                return result.ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }       
+
+        public IList<RetrieveWineReviewsResult> GetRatingsSKU(int sku)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<RetrieveWineRatingsResult> GetRatingsUID(int uid)
+        {
+            throw new NotImplementedException();
+        }        
     }
 }

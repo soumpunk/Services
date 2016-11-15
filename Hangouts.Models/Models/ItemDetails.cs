@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hangouts.Models.Models
+namespace Hangout.Models
 {
     public class ItemDetails : BaseItem
     {
@@ -25,7 +25,7 @@ namespace Hangouts.Models.Models
         public string Notes { get; set; }
         public string OtherText { get; set; }
         public string Producer { get; set; }
-        List<Review> Reviews { get; set; }
-        List<Rating> Rating { get; set; }
+        public List<Review> Reviews { get; set; }
+        public List<Rating> Ratings { get; set; }
     }
 }
