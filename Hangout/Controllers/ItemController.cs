@@ -42,5 +42,7 @@ namespace Hangout.Controllers
             resp = itemService.GetRatingsUID(objectId);
             return resp;
         }
+
+
     }
 }

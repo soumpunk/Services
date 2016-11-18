@@ -28,7 +28,7 @@ namespace Hangouts.Business
                     RegPrice = Convert.ToDouble(result.RegPrice),
                     AverageRating = Convert.ToDouble(result.AverageRating),
                     IsLike = Convert.ToBoolean(result.Liked),
-                    SmallImageUrl = result.SmallImageUrl
+                    SmallImageUrl = result.SmallImageURL
                 });
             }
             itemListResponse.ItemList = itemList;
@@ -39,118 +39,75 @@ namespace Hangouts.Business
         {
             ItemDetailsResponse itemDetailsResponse = new ItemDetailsResponse();
             IList<ItemDetails> itemDetailsList = new List<ItemDetails>();
-            List<Rating> ratings = new List<Rating>();
-
-            itemDetailsList.Add(new ItemDetails
-            {
-                SKU = "1889",
-                Name = "Ankur Wine",
-                Region ="US",
-                Country = "NY",
-                SalePrice = 5.45,
-                RegPrice = 3.56,
-                AverageRating = 5,
-                IsLike = true,
-                LargeImageUrl = "",
-                Sub_Region = "",
-                GrapeVerietal = ""
-                //AvgRating = "",
-                //UsersRating = Convert.ToDouble(result.UsersRating),
-                //Description = result.Description,
-                //Type = result.Type,
-                //BottleSize = result.BottleSize.ToString(),
-                //Tasting_Notes = result.TastingNotes,
-                //Ratings = ratings
-                //Alcohol_Levels = result.Alcohol_Levels,
-                //Food_Pairings = result.Food_Pairings,
-                //ServingAt = result.ServingAt,
-                //WineMakerNotes = result.WineMakerNotes,
-                //TechnicalNotes = result.TechnicalNotes,
-                //Notes = result.Notes,
-                //OtherText = result.OtherText,
-                //Producer = result.Producer
-            });
+            
 
             itemDetailsResponse.ItemDetails = itemDetailsList.ToList();
 
             #region DB Interaction
 
-            //IItemDBManager itemDBManager = new ItemDBManager();
-            //IList<RetrieveWineDetailsResult> wineDetailsResults = itemDBManager.GetDetails(wineId, cardID, customerID).ToList();
-            //IList<RetrieveWineRatingsResult> wineRatings = itemDBManager.GetRatings(wineId, cardID, customerID).ToList();
-            //if (wineRatings.Any())
-            //{
-            //    foreach (RetrieveWineRatingsResult rating in wineRatings)
-            //    {
-            //        ratings.Add(new Rating
-            //        {
-            //            SKU = rating.SKU.ToString(),
-            //            RatingStars = rating.RatingStars.ToString(),
-            //            //Date = rating.Date,
-            //            //Username = rating.UserName,
-            //            Name = rating.Name,
-            //            Vintage = rating.Vintage.ToString(),
-            //            Region = rating.Region,
-            //            Country = rating.Country
-            //        });
-            //    }
-            //}
-
-            //if (wineDetailsResults.Any())
-            //{
-            //    foreach (RetrieveWineDetailsResult result in wineDetailsResults)
-            //    {
-            //        itemDetailsList.Add(new ItemDetails
-            //        {
-            //            SKU = result.SKU.ToString(),
-            //            Name = result.Name,
-            //            Region = result.Region,
-            //            Country = result.Country,
-            //            SalePrice = Convert.ToDouble(result.SalePrice),
-            //            RegPrice = Convert.ToDouble(result.RegPrice),
-            //            AverageRating = Convert.ToDouble(result.AverageRating),
-            //            IsLike = Convert.ToBoolean(result.Liked),
-            //            LargeImageUrl = result.LargeImageURL,
-            //            Sub_Region = result.Sub_Region,
-            //            GrapeVerietal = result.GrapeVerietal,
-            //            AvgRating = Convert.ToDouble(result.AverageRating),
-            //            UsersRating = Convert.ToDouble(result.UsersRating),
-            //            Description = result.Description,
-            //            Type = result.Type,
-            //            BottleSize = result.BottleSize.ToString(),
-            //            Tasting_Notes = result.TastingNotes,
-            //            Ratings = ratings
-            //            //Alcohol_Levels = result.Alcohol_Levels,
-            //            //Food_Pairings = result.Food_Pairings,
-            //            //ServingAt = result.ServingAt,
-            //            //WineMakerNotes = result.WineMakerNotes,
-            //            //TechnicalNotes = result.TechnicalNotes,
-            //            //Notes = result.Notes,
-            //            //OtherText = result.OtherText,
-            //            //Producer = result.Producer
-            //        });
-            //    }
-            //}
+            IItemDBManager itemDBManager = new ItemDBManager();
+            IList<RetrieveWineDetailsResult> wineDetailsResults = itemDBManager.GetDetails(sku).ToList();
+        
+            if (wineDetailsResults.Any())
+            {
+                foreach (RetrieveWineDetailsResult result in wineDetailsResults)
+                {
+                    itemDetailsList.Add(new ItemDetails
+                    {
+                        SKU = result.SKU.ToString(),
+                        Name = result.Name,
+                        Region = result.Region,
+                        Country = result.Country,
+                        SalePrice = Convert.ToDouble(result.SalePrice),
+                        RegPrice = Convert.ToDouble(result.RegPrice),
+                        AverageRating = Convert.ToDouble(result.AverageRating),
+                        IsLike = Convert.ToBoolean(result.Liked),
+                        LargeImageUrl = result.LargeImageUrl,
+                        Sub_Region = result.Sub_Region,
+                        GrapeVerietal = result.GrapeVerietal,
+                        AvgRating = Convert.ToDouble(result.AverageRating),
+                        UsersRating = Convert.ToDouble(result.UsersRating),
+                        Description = result.Description,
+                        Type = result.Type,
+                        BottleSize = result.BottleSize.ToString(),
+                        //Tasting_Notes = result.t,
+                        //Alcohol_Levels = result.Alcohol_Levels,
+                        //Food_Pairings = result.Food_Pairings,
+                        //ServingAt = result.ServingAt,
+                        //WineMakerNotes = result.WineMakerNotes,
+                        //TechnicalNotes = result.TechnicalNotes,
+                        //Notes = result.Notes,
+                        //OtherText = result.OtherText,
+                        //Producer = result.Producer
+                    });
+                }
+                itemDetailsResponse.ItemDetails = itemDetailsList;
+            }
             #endregion 
             return itemDetailsResponse;
         }
-              
+
 
         public ItemRatingResponse GetRatingsSKU(int sku)
         {
             ItemRatingResponse itemRatingResponse = new ItemRatingResponse();
             IList<Rating> raingList = new List<Rating>();
-            raingList.Add(new Rating
+            IItemDBManager itemDBManager = new ItemDBManager();
+            IList<RetrieveRatingsBySKUResult> ratingsSKUresult = itemDBManager.GetRatingsSKU(sku).ToList();
+            foreach (RetrieveRatingsBySKUResult result in ratingsSKUresult)
             {
-                SKU = "1889",
-                RatingStars = "5",
-                //Date = rating.Date,
-                //Username = rating.UserName,
-                Name = "Test",
-                Vintage = "Vinatge1",
-                Region = "US",
-                Country = "NY"
-            });
+                raingList.Add(new Rating
+                {
+                    SKU = result.SKU.ToString(),
+                    RatingStars = result.RatingStars.ToString(),
+                    Date = result.Date,
+                    Username = result.UserName.ToString(),
+                    Name = result.Name,
+                    Vintage = result.Vintage.ToString(),
+                    Region = result.Region,
+                    Country = result.Country
+                });
+            }
             itemRatingResponse.Ratings = raingList;
             return itemRatingResponse;
         }
@@ -159,17 +116,22 @@ namespace Hangouts.Business
         {
             ItemRatingResponse itemRatingResponse = new ItemRatingResponse();
             IList<Rating> raingList = new List<Rating>();
-            raingList.Add(new Rating
+            IItemDBManager itemDBManager = new ItemDBManager();
+            IList<RetrieveRatingsByUserIdResult> ratingsUserresult = itemDBManager.GetRatingsUID(uid).ToList();
+            foreach (RetrieveRatingsByUserIdResult result in ratingsUserresult)
             {
-                SKU = "1889",
-                RatingStars = "5",
-                //Date = rating.Date,
-                //Username = rating.UserName,
-                Name = "Test",
-                Vintage = "Vinatge1",
-                Region = "US",
-                Country = "NY"
-            });
+                raingList.Add(new Rating
+                {
+                    SKU = result.SKU.ToString(),
+                    RatingStars = result.RatingStars.ToString(),
+                    Date = result.Date,
+                    Username = result.UserName.ToString(),
+                    Name = result.Name,
+                    Vintage = result.Vintage.ToString(),
+                    Region = result.Region,
+                    Country = result.Country
+                });
+            }
             itemRatingResponse.Ratings = raingList;
             return itemRatingResponse;
         }

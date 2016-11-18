@@ -11,7 +11,7 @@ namespace Hangouts.DataAccess
     {
         IList<RetrieveAvailableWinesResult> GetLists(int plantFinal);
         IList<RetrieveWineDetailsResult> GetDetails(int sku);
-        IList<RetrieveWineReviewsResult> GetRatingsSKU(int sku);
-        IList<RetrieveWineRatingsResult> GetRatingsUID(int uid);
+        IList<RetrieveRatingsBySKUResult> GetRatingsSKU(int sku);
+        IList<RetrieveRatingsByUserIdResult> GetRatingsUID(int uid);
     }
 }

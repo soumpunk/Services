@@ -48,14 +48,32 @@ namespace Hangouts.DataAccess
             }
         }       
 
-        public IList<RetrieveWineReviewsResult> GetRatingsSKU(int sku)
+        public IList<RetrieveRatingsBySKUResult> GetRatingsSKU(int sku)
         {
-            throw new NotImplementedException();
+            try
+            {
+                ISingleResult<RetrieveRatingsBySKUResult> result =
+                DBContext.RetrieveRatingsBySKU(sku);
+                return result.ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
-        public IList<RetrieveWineRatingsResult> GetRatingsUID(int uid)
+        public IList<RetrieveRatingsByUserIdResult> GetRatingsUID(int uid)
         {
-            throw new NotImplementedException();
+            try
+            {
+                ISingleResult<RetrieveRatingsByUserIdResult> result =
+                DBContext.RetrieveRatingsByUserId(uid);
+                return result.ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }        
     }
 }
