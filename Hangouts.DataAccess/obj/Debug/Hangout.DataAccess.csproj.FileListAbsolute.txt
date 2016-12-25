@@ -14,3 +14,10 @@ F:\SAVVY\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.dll
 F:\SAVVY\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.pdb
 F:\SAVVY\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.dll
 F:\SAVVY\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.pdb
+E:\Sample\Services\Hangouts.DataAccess\bin\Debug\Hangouts.DataAccess.dll
+E:\Sample\Services\Hangouts.DataAccess\bin\Debug\Hangouts.DataAccess.pdb
+E:\Sample\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.dll
+E:\Sample\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.pdb
+E:\Sample\Services\Hangouts.DataAccess\obj\Debug\Hangout.DataAccess.csprojResolveAssemblyReference.cache
+E:\Sample\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.dll
+E:\Sample\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.pdb

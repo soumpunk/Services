@@ -376,3 +376,5 @@ F:\SAVVY\Services\Hangout\obj\Debug\Hangout.dll
 F:\SAVVY\Services\Hangout\obj\Debug\Hangout.pdb
 F:\SAVVY\Services\Hangout\bin\Hangouts.DataAccess.dll
 F:\SAVVY\Services\Hangout\bin\Hangouts.DataAccess.pdb
+E:\Sample\Services\Hangout\bin\Hangouts.DataAccess.dll
+E:\Sample\Services\Hangout\bin\Hangouts.DataAccess.pdb

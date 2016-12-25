@@ -15,7 +15,7 @@ namespace Hangout.Models
         public double SalePrice { get; set; }
         public double RegPrice { get; set; }
         public double AverageRating { get; set; }
-        public bool IsLike { get; set; }
+        public bool? IsLike { get; set; }
         public string SmallImageUrl { get; set; }
     }
 }
