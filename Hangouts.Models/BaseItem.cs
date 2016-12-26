@@ -17,5 +17,6 @@ namespace Hangout.Models
         public double AverageRating { get; set; }
         public bool? IsLike { get; set; }
         public string SmallImageUrl { get; set; }
+        public int Vintage { get; set; }
     }
 }

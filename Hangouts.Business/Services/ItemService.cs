@@ -28,7 +28,8 @@ namespace Hangouts.Business
                     RegPrice = Convert.ToDouble(result.RegPrice),
                     AverageRating = Convert.ToDouble(result.AverageRating),
                     IsLike = Convert.ToBoolean(result.Liked),
-                    SmallImageUrl = result.SmallImageURL
+                    SmallImageUrl = result.SmallImageURL,
+                    Vintage = result.Vintage
                 });
             }
             itemListResponse.ItemList = itemList;
