@@ -50,7 +50,7 @@
       <Name>Hangout.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Hangouts.Models\Hangout.Models.csproj">
-      <Project>{BCC0D851-7F5D-4CDA-B305-AB3C497360DA}</Project>
+      <Project>{bcc0d851-7f5d-4cda-b305-ab3c497360da}</Project>
       <Name>Hangout.Models</Name>
     </ProjectReference>
   </ItemGroup>
