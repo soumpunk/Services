@@ -43,7 +43,8 @@ namespace Hangout.Controllers
             return resp;
         }
 
-        public string TestService()
+        [HttpGet]
+        public string TestService(int objectId)
         {
             return "Ankur Dubey";
         }
