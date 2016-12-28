@@ -56,7 +56,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Hangouts.Models\Hangout.Models.csproj">
+      <Project>{bcc0d851-7f5d-4cda-b305-ab3c497360da}</Project>
+      <Name>Hangout.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="HangoutsDB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -75,12 +80,6 @@
     <None Include="HangoutsDB.dbml.layout">
       <DependentUpon>HangoutsDB.dbml</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Hangouts.Models\Hangout.Models.csproj">
-      <Project>{bcc0d851-7f5d-4cda-b305-ab3c497360da}</Project>
-      <Name>Hangout.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
