@@ -10,8 +10,8 @@ namespace Hangout.Models
     {
         public string Sub_Region { get; set; }
         public string GrapeVerietal { get; set; }
-        public double AvgRating { get; set; }
-        public double UsersRating { get; set; }
+        public decimal AvgRating { get; set; }
+        public decimal UsersRating { get; set; }
         public string Description { get; set; }
         public string Type { get; set; }
         public string BottleSize { get; set; }

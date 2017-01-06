@@ -14,7 +14,7 @@ namespace Hangout.Models
         public string Country { get; set; }
         public double SalePrice { get; set; }
         public double RegPrice { get; set; }
-        public double AverageRating { get; set; }
+        public decimal AverageRating { get; set; }
         public bool? IsLike { get; set; }
         public string SmallImageUrl { get; set; }
         public int Vintage { get; set; }
