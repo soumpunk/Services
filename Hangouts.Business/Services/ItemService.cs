@@ -100,7 +100,7 @@ namespace Hangouts.Business
                 raingList.Add(new Rating
                 {
                     SKU = result.SKU.ToString(),
-                    RatingStars = result.RatingStars.ToString(),
+                    RatingStars = result.RatingStars,
                     Date = result.Date,
                     Username = result.UserName.ToString(),
                     Name = result.Name,
@@ -124,7 +124,7 @@ namespace Hangouts.Business
                 raingList.Add(new Rating
                 {
                     SKU = result.SKU.ToString(),
-                    RatingStars = result.RatingStars.ToString(),
+                    RatingStars = result.RatingStars,
                     Date = result.Date,
                     Username = result.UserName.ToString(),
                     Name = result.Name,

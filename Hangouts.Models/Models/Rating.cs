@@ -9,7 +9,7 @@ namespace Hangout.Models
     public class Rating
     {
         public string SKU { get; set; }
-        public string RatingStars { get; set; }
+        public decimal RatingStars { get; set; }
         public string RatingText { get; set; }
         public DateTime Date { get; set; }
         public string Username { get; set; }
