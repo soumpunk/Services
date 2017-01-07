@@ -16,18 +16,19 @@ namespace Hangout.Models
         //public List<Review> Reviews { get; set; }
         public List<Rating> Ratings { get; set; }
         //Properties
-        public string Sub_Region { get; set; }
-        public string GrapeVerietal { get; set; }
-        public string Type { get; set; }
-        public string BottleSize { get; set; }
-        public string Alcohol_Levels { get; set; }
-        public string Food_Pairings { get; set; }
-        public string ServingAt { get; set; }
-        public string Tasting_Notes { get; set; }
-        public string WineMakerNotes { get; set; }
-        public string TechnicalNotes { get; set; }
-        public string Notes { get; set; }
-        public string OtherText { get; set; }
+        public Dictionary<string, string> Properties { get; set; }
+        //public string Sub_Region { get; set; }
+        //public string GrapeVerietal { get; set; }
+        //public string Type { get; set; }
+        //public string BottleSize { get; set; }
+        //public string Alcohol_Levels { get; set; }
+        //public string Food_Pairings { get; set; }
+        //public string ServingAt { get; set; }
+        //public string Tasting_Notes { get; set; }
+        //public string WineMakerNotes { get; set; }
+        //public string TechnicalNotes { get; set; }
+        //public string Notes { get; set; }
+        //public string OtherText { get; set; }
 
     }
 }
