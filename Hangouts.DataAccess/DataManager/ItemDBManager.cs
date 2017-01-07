@@ -30,7 +30,7 @@ namespace Hangouts.DataAccess
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
         }
 
