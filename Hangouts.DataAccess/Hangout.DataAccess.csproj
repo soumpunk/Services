@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataManager\ItemDBManager.cs" />
+    <Compile Include="HangoutsDB.cs">
+      <DependentUpon>HangoutsDB.dbml</DependentUpon>
+    </Compile>
     <Compile Include="HangoutsDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

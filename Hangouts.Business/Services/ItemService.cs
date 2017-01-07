@@ -66,6 +66,7 @@ namespace Hangouts.Business
                         LargeImageUrl = result.LargeImageUrl,
                         //Sub_Region = result.Sub_Region,
                         //GrapeVerietal = result.GrapeVerietal,
+                        Vintage = Convert.ToInt32(result.Vintage),
                         UsersRating = Convert.ToDecimal(result.UsersRating),
                         Description = result.Description,
                         WineProperties = new Dictionary<string, string>()
