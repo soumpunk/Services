@@ -39,10 +39,10 @@ namespace Hangouts.Business
         public ItemDetailsResponse GetItemDetails(int sku)
         {
             ItemDetailsResponse itemDetailsResponse = new ItemDetailsResponse();
-            IList<ItemDetails> itemDetailsList = new List<ItemDetails>();
+            ItemDetails itemDetailsList = new ItemDetails();
             
 
-            itemDetailsResponse.ItemDetails = itemDetailsList.ToList();
+            itemDetailsResponse.ItemDetails = itemDetailsList;
 
             #region DB Interaction
 
@@ -53,7 +53,7 @@ namespace Hangouts.Business
             {
                 foreach (RetrieveWineDetailsResult result in wineDetailsResults)
                 {
-                    itemDetailsList.Add(new ItemDetails
+                    itemDetailsList = new ItemDetails
                     {
                         SKU = result.SKU.ToString(),
                         Name = result.Name,
@@ -66,7 +66,6 @@ namespace Hangouts.Business
                         LargeImageUrl = result.LargeImageUrl,
                         Sub_Region = result.Sub_Region,
                         GrapeVerietal = result.GrapeVerietal,
-                        AvgRating = Convert.ToDecimal(result.AverageRating),
                         UsersRating = Convert.ToDecimal(result.UsersRating),
                         Description = result.Description,
                         Type = result.Type,
@@ -80,7 +79,7 @@ namespace Hangouts.Business
                         //Notes = result.Notes,
                         //OtherText = result.OtherText,
                         //Producer = result.Producer
-                    });
+                    };
                 }
                 itemDetailsResponse.ItemDetails = itemDetailsList;
             }
