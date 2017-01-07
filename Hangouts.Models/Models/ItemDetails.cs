@@ -16,7 +16,7 @@ namespace Hangout.Models
         //public List<Review> Reviews { get; set; }
         public List<Rating> Ratings { get; set; }
         //Properties
-        public Dictionary<string, string> Properties { get; set; }
+        public Dictionary<string, string> WineProperties { get; set; }
         //public string Sub_Region { get; set; }
         //public string GrapeVerietal { get; set; }
         //public string Type { get; set; }

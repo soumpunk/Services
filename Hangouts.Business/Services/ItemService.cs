@@ -68,7 +68,7 @@ namespace Hangouts.Business
                         //GrapeVerietal = result.GrapeVerietal,
                         UsersRating = Convert.ToDecimal(result.UsersRating),
                         Description = result.Description,
-                        Properties = new Dictionary<string, string>()
+                        WineProperties = new Dictionary<string, string>()
                         //Type = result.Type,
                         //BottleSize = result.BottleSize.ToString(),
                         //Tasting_Notes = result.t,
