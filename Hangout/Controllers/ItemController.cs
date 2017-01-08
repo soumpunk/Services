@@ -11,6 +11,7 @@ namespace Hangout.Controllers
 {
     public class ItemController : ApiController
     {
+        [HttpGet]
         public ItemListResponse GetItemList(int objectId)
         {
             ItemListResponse resp = new ItemListResponse();
@@ -18,7 +19,7 @@ namespace Hangout.Controllers
             resp = itemService.GetItemList(objectId);
             return resp;
         }
-
+        [HttpGet]
         public ItemDetailsResponse GetItemDetails(int objectId)
         {
             ItemDetailsResponse resp = new ItemDetailsResponse();
@@ -26,7 +27,7 @@ namespace Hangout.Controllers
             resp = itemService.GetItemDetails(objectId);
             return resp;
         }
-
+        [HttpGet]
         public ItemRatingResponse GetItemRatingsSKU(int objectId)
         {
             ItemRatingResponse resp = new ItemRatingResponse();
@@ -35,6 +36,7 @@ namespace Hangout.Controllers
             return resp;
         }
 
+        [HttpGet]
         public ItemRatingResponse GetItemRatingsUID(int objectId)
         {
             ItemRatingResponse resp = new ItemRatingResponse();
@@ -49,5 +51,18 @@ namespace Hangout.Controllers
             return "Ankur Dubey";
         }
 
+        [HttpPost]
+        public int InsertUpdateLike(SKULike skuLike )
+        {
+            IItemService itemService = new ItemService();
+            return (itemService.InsertUpdateSKULike(skuLike));
+        }
+
+        [HttpGet]
+        public int AuthenticateUser(string objectId)
+        {
+            IItemService itemService = new ItemService();
+            return (itemService.AuthenticateUser(objectId));
+        }
     }
 }

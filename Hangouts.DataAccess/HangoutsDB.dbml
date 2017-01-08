@@ -64,4 +64,16 @@
       <Column Name="SmallImageURL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.InsertUpdateLike" Method="InsertUpdateLike">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SKU" Parameter="sKU" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Liked" Parameter="liked" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AuthenticateUser" Method="AuthenticateUser">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="AuthenticateUserResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

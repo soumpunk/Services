@@ -89,6 +89,20 @@ namespace Hangouts.DataAccess
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), plantFinal);
 			return ((ISingleResult<RetrieveAvailableWinesResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertUpdateLike")]
+		public int InsertUpdateLike([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SKU", DbType="Int")] System.Nullable<int> sKU, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Liked", DbType="Bit")] System.Nullable<bool> liked)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, sKU, liked);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AuthenticateUser")]
+		public ISingleResult<AuthenticateUserResult> AuthenticateUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(MAX)")] string name)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name);
+			return ((ISingleResult<AuthenticateUserResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class RetrieveRatingsBySKUResult
@@ -910,6 +924,32 @@ namespace Hangouts.DataAccess
 				if ((this._SmallImageURL != value))
 				{
 					this._SmallImageURL = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuthenticateUserResult
+	{
+		
+		private System.Nullable<int> _Column1;
+		
+		public AuthenticateUserResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
+		public System.Nullable<int> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
 				}
 			}
 		}

@@ -45,6 +45,7 @@
     <Compile Include="Models\ItemDetails.cs" />
     <Compile Include="Models\Rating.cs" />
     <Compile Include="Models\Review.cs" />
+    <Compile Include="Models\SKULike.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Response\BaseServiceResponse.cs" />
     <Compile Include="Response\ItemDetailsResponse.cs" />

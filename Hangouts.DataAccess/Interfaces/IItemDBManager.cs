@@ -13,5 +13,7 @@ namespace Hangouts.DataAccess
         IList<RetrieveWineDetailsResult> GetDetails(int sku);
         IList<RetrieveRatingsBySKUResult> GetRatingsSKU(int sku);
         IList<RetrieveRatingsByUserIdResult> GetRatingsUID(int uid);
+        int InsertUpdateSKULike(SKULike skuLike);
+        int AuthenticateUser(string userName);
     }
 }

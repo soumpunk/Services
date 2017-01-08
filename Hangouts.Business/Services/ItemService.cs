@@ -114,6 +114,18 @@ namespace Hangouts.Business
             return itemRatingResponse;
         }
 
+        public int InsertUpdateSKULike(SKULike skuLike)
+        {
+            IItemDBManager itemDBManager = new ItemDBManager();
+            return (itemDBManager.InsertUpdateSKULike(skuLike));
+        }
+
+        public int AuthenticateUser(string userName)
+        {
+            IItemDBManager itemDBManager = new ItemDBManager();
+            return (itemDBManager.AuthenticateUser(userName));
+        }
+
         public ItemRatingResponse GetRatingsUID(int uid)
         {
             ItemRatingResponse itemRatingResponse = new ItemRatingResponse();

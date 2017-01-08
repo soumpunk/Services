@@ -13,5 +13,7 @@ namespace Hangouts.Business
         ItemDetailsResponse GetItemDetails(int sku);
         ItemRatingResponse GetRatingsSKU(int sku);
         ItemRatingResponse GetRatingsUID(int uid);
+        int InsertUpdateSKULike(SKULike skuLike);
+        int AuthenticateUser(string userName);
     }
 }

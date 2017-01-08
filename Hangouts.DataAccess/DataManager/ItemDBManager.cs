@@ -62,6 +62,40 @@ namespace Hangouts.DataAccess
             }
         }
 
+        public int InsertUpdateSKULike(SKULike skuLike)
+        {
+            try
+            {
+                int result = DBContext.InsertUpdateLike(skuLike.UserID, skuLike.SKU, skuLike.Liked);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
+        public int AuthenticateUser(string userName)
+        {
+            try
+            {
+                ISingleResult<AuthenticateUserResult> result = DBContext.AuthenticateUser(userName);
+                var res = result.ToList();
+                if (res.Any())
+                {
+                    return res[0].Column1.Value;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
         public IList<RetrieveRatingsByUserIdResult> GetRatingsUID(int uid)
         {
             try
