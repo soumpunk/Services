@@ -17,6 +17,5 @@ E:\Sample\Services\Hangouts.Models\obj\Debug\Hangouts.Models.dll
 E:\Sample\Services\Hangouts.Models\obj\Debug\Hangouts.Models.pdb
 C:\GIT\Services\Hangouts.Models\bin\Debug\Hangouts.Models.dll
 C:\GIT\Services\Hangouts.Models\bin\Debug\Hangouts.Models.pdb
-C:\GIT\Services\Hangouts.Models\obj\Debug\Hangout.Models.csprojResolveAssemblyReference.cache
 C:\GIT\Services\Hangouts.Models\obj\Debug\Hangouts.Models.dll
 C:\GIT\Services\Hangouts.Models\obj\Debug\Hangouts.Models.pdb

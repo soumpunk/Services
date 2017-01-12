@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Hangouts" Class="HangoutsDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=108.58.151.10,1433;Initial Catalog=Hangouts;Persist Security Info=True;User ID=ankur" SettingsObjectName="Hangouts.DataAccess.Properties.Settings" SettingsPropertyName="HangoutsConnectionString" Provider="System.Data.SqlClient" />
-  <Function Name="dbo.RetrieveRatingsBySKU" Method="RetrieveRatingsBySKU">
-    <Parameter Name="SKU" Parameter="sKU" Type="System.Int32" DbType="Int" />
-    <ElementType Name="RetrieveRatingsBySKUResult">
-      <Column Name="RatingStars" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="RatingText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="UserName" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SKU" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Vintage" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Region" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="Country" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.RetrieveRatingsByUserId" Method="RetrieveRatingsByUserId">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
     <ElementType Name="RetrieveRatingsByUserIdResult">
@@ -74,6 +60,20 @@
     <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(MAX)" />
     <ElementType Name="AuthenticateUserResult">
       <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.RetrieveRatingsBySKU" Method="RetrieveRatingsBySKU">
+    <Parameter Name="SKU" Parameter="sKU" Type="System.Int32" DbType="Int" />
+    <ElementType Name="RetrieveRatingsBySKUResult">
+      <Column Name="RatingStars" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RatingText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SKU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Vintage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Region" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

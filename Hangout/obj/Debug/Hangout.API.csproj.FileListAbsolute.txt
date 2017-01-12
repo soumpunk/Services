@@ -378,6 +378,7 @@ E:\Sample\Services\Hangout\bin\Hangouts.DataAccess.pdb
 E:\Sample\Services\Hangout\obj\Debug\Hangout.API.csprojResolveAssemblyReference.cache
 E:\Sample\Services\Hangout\obj\Debug\Hangout.dll
 E:\Sample\Services\Hangout\obj\Debug\Hangout.pdb
+C:\GIT\Services\Hangout\obj\Debug\Hangout.API.csprojResolveAssemblyReference.cache
 C:\GIT\Services\Hangout\bin\ApplicationInsights.config
 C:\GIT\Services\Hangout\bin\roslyn\csc.exe
 C:\GIT\Services\Hangout\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -471,6 +472,5 @@ C:\GIT\Services\Hangout\bin\Microsoft.Owin.Security.Twitter.xml
 C:\GIT\Services\Hangout\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\GIT\Services\Hangout\bin\System.Web.Http.Owin.xml
 C:\GIT\Services\Hangout\bin\Hangouts.DataAccess.pdb
-C:\GIT\Services\Hangout\obj\Debug\Hangout.API.csprojResolveAssemblyReference.cache
 C:\GIT\Services\Hangout\obj\Debug\Hangout.dll
 C:\GIT\Services\Hangout\obj\Debug\Hangout.pdb

@@ -62,13 +62,6 @@ namespace Hangouts.DataAccess
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveRatingsBySKU")]
-		public ISingleResult<RetrieveRatingsBySKUResult> RetrieveRatingsBySKU([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SKU", DbType="Int")] System.Nullable<int> sKU)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sKU);
-			return ((ISingleResult<RetrieveRatingsBySKUResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveRatingsByUserId")]
 		public ISingleResult<RetrieveRatingsByUserIdResult> RetrieveRatingsByUserId([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID)
 		{
@@ -103,175 +96,12 @@ namespace Hangouts.DataAccess
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name);
 			return ((ISingleResult<AuthenticateUserResult>)(result.ReturnValue));
 		}
-	}
-	
-	public partial class RetrieveRatingsBySKUResult
-	{
 		
-		private int _RatingStars;
-		
-		private string _RatingText;
-		
-		private System.DateTime _Date;
-		
-		private System.Nullable<int> _UserName;
-		
-		private System.Nullable<int> _SKU;
-		
-		private string _Name;
-		
-		private System.Nullable<int> _Vintage;
-		
-		private string _Region;
-		
-		private string _Country;
-		
-		public RetrieveRatingsBySKUResult()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveRatingsBySKU")]
+		public ISingleResult<RetrieveRatingsBySKUResult> RetrieveRatingsBySKU([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SKU", DbType="Int")] System.Nullable<int> sKU)
 		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RatingStars", DbType="Int NOT NULL")]
-		public int RatingStars
-		{
-			get
-			{
-				return this._RatingStars;
-			}
-			set
-			{
-				if ((this._RatingStars != value))
-				{
-					this._RatingStars = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RatingText", DbType="NVarChar(MAX)")]
-		public string RatingText
-		{
-			get
-			{
-				return this._RatingText;
-			}
-			set
-			{
-				if ((this._RatingText != value))
-				{
-					this._RatingText = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime NOT NULL")]
-		public System.DateTime Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this._Date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="Int")]
-		public System.Nullable<int> UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this._UserName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SKU", DbType="Int")]
-		public System.Nullable<int> SKU
-		{
-			get
-			{
-				return this._SKU;
-			}
-			set
-			{
-				if ((this._SKU != value))
-				{
-					this._SKU = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this._Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vintage", DbType="Int")]
-		public System.Nullable<int> Vintage
-		{
-			get
-			{
-				return this._Vintage;
-			}
-			set
-			{
-				if ((this._Vintage != value))
-				{
-					this._Vintage = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string Region
-		{
-			get
-			{
-				return this._Region;
-			}
-			set
-			{
-				if ((this._Region != value))
-				{
-					this._Region = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Country
-		{
-			get
-			{
-				return this._Country;
-			}
-			set
-			{
-				if ((this._Country != value))
-				{
-					this._Country = value;
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sKU);
+			return ((ISingleResult<RetrieveRatingsBySKUResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -950,6 +780,176 @@ namespace Hangouts.DataAccess
 				if ((this._Column1 != value))
 				{
 					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class RetrieveRatingsBySKUResult
+	{
+		
+		private int _RatingStars;
+		
+		private string _RatingText;
+		
+		private System.DateTime _Date;
+		
+		private string _UserName;
+		
+		private System.Nullable<int> _SKU;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _Vintage;
+		
+		private string _Region;
+		
+		private string _Country;
+		
+		public RetrieveRatingsBySKUResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RatingStars", DbType="Int NOT NULL")]
+		public int RatingStars
+		{
+			get
+			{
+				return this._RatingStars;
+			}
+			set
+			{
+				if ((this._RatingStars != value))
+				{
+					this._RatingStars = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RatingText", DbType="NVarChar(MAX)")]
+		public string RatingText
+		{
+			get
+			{
+				return this._RatingText;
+			}
+			set
+			{
+				if ((this._RatingText != value))
+				{
+					this._RatingText = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="DateTime NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SKU", DbType="Int")]
+		public System.Nullable<int> SKU
+		{
+			get
+			{
+				return this._SKU;
+			}
+			set
+			{
+				if ((this._SKU != value))
+				{
+					this._SKU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vintage", DbType="Int")]
+		public System.Nullable<int> Vintage
+		{
+			get
+			{
+				return this._Vintage;
+			}
+			set
+			{
+				if ((this._Vintage != value))
+				{
+					this._Vintage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string Region
+		{
+			get
+			{
+				return this._Region;
+			}
+			set
+			{
+				if ((this._Region != value))
+				{
+					this._Region = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Country
+		{
+			get
+			{
+				return this._Country;
+			}
+			set
+			{
+				if ((this._Country != value))
+				{
+					this._Country = value;
 				}
 			}
 		}
