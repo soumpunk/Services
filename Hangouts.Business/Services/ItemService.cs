@@ -107,7 +107,8 @@ namespace Hangouts.Business
                     Name = result.Name,
                     Vintage = result.Vintage.ToString(),
                     Region = result.Region,
-                    Country = result.Country
+                    Country = result.Country,
+                    RatingText = result.RatingText
                 });
             }
             itemRatingResponse.Ratings = raingList;
