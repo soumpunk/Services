@@ -65,5 +65,19 @@ namespace Hangout.Controllers
             IItemService itemService = new ItemService();
             return (itemService.AuthenticateUser(objectId));
         }
+
+        [HttpPost]
+        public int InsertUpdateReview(Review review)
+        {
+            IItemService itemService = new ItemService();
+            return (itemService.InsertUpdateReview(review));
+        }
+
+        [HttpPost]
+        public int DeleteReview(Review review)
+        {
+            IItemService itemService = new ItemService();
+            return (itemService.DeleteReview(review.SKU, review.ReviewUserId));
+        }
     }
 }

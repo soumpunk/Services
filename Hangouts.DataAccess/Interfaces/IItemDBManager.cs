@@ -15,5 +15,7 @@ namespace Hangouts.DataAccess
         IList<RetrieveRatingsByUserIdResult> GetRatingsUID(int uid);
         int InsertUpdateSKULike(SKULike skuLike);
         int AuthenticateUser(string userName);
+        int InsertUpdateReview(Review review);
+        int DeleteReview(int sku, int reviewUserId);
     }
 }

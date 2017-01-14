@@ -103,6 +103,20 @@ namespace Hangouts.DataAccess
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sKU);
 			return ((ISingleResult<RetrieveRatingsBySKUResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertUpdateReview")]
+		public int InsertUpdateReview([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ReviewID", DbType="Int")] System.Nullable<int> reviewID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlantFinal", DbType="VarChar(10)")] string plantFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ReviewDate", DbType="DateTime")] System.Nullable<System.DateTime> reviewDate, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CardID", DbType="Int")] System.Nullable<int> cardID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cost", DbType="Decimal(18,4)")] System.Nullable<decimal> cost, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="RatingStars", DbType="Int")] System.Nullable<int> ratingStars, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SKU", DbType="Int")] System.Nullable<int> sKU, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CommentsTitle", DbType="NVarChar(1)")] string commentsTitle, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="RatingText", DbType="NVarChar(1)")] string ratingText, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ReviewUserId", DbType="Int")] System.Nullable<int> reviewUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="VarChar(1)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IsActive", DbType="Bit")] System.Nullable<bool> isActive)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), reviewID, plantFinal, reviewDate, cardID, cost, ratingStars, sKU, commentsTitle, ratingText, reviewUserId, name, isActive);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DeleteReview")]
+		public int DeleteReview([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SKU", DbType="Int")] System.Nullable<int> sKU, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ReviewUserId", DbType="Int")] System.Nullable<int> reviewUserId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sKU, reviewUserId);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class RetrieveRatingsByUserIdResult

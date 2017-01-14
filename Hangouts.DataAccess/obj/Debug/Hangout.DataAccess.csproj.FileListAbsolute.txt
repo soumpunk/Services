@@ -28,3 +28,10 @@ C:\GIT\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.dll
 C:\GIT\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.pdb
 C:\GIT\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.dll
 C:\GIT\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.pdb
+F:\SAVVY\Services\Services\Hangouts.DataAccess\obj\Debug\Hangout.DataAccess.csprojResolveAssemblyReference.cache
+F:\SAVVY\Services\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.dll
+F:\SAVVY\Services\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.pdb
+F:\SAVVY\Services\Services\Hangouts.DataAccess\bin\Debug\Hangouts.DataAccess.dll
+F:\SAVVY\Services\Services\Hangouts.DataAccess\bin\Debug\Hangouts.DataAccess.pdb
+F:\SAVVY\Services\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.dll
+F:\SAVVY\Services\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.pdb

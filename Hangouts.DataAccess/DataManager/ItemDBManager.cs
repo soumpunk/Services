@@ -108,6 +108,44 @@ namespace Hangouts.DataAccess
             {
                 return null;
             }
-        }        
+        }
+
+        public int InsertUpdateReview(Review review)
+        {
+            try
+            {
+                int result = DBContext.InsertUpdateReview(review.ReviewID,
+                                                          review.PlantFinal,
+                                                          review.ReviewDate,
+                                                          review.CardID,
+                                                          Convert.ToDecimal(review.Cost),
+                                                          review.RatingStars,
+                                                          review.SKU,
+                                                          review.CommentsTitle,
+                                                          review.RatingText,
+                                                          review.ReviewUserId,
+                                                          review.Name,
+                                                          review.IsActive);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
+        public int DeleteReview(int sku, int reviewUserId)
+        {
+            try
+            {
+                int result = DBContext.DeleteReview(sku, reviewUserId);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
     }
 }

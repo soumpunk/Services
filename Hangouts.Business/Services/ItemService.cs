@@ -150,5 +150,26 @@ namespace Hangouts.Business
             itemRatingResponse.Ratings = raingList;
             return itemRatingResponse;
         }
+
+        public int DeleteReview(int sku, int reviewUserId)
+        {
+            try
+            {
+                IItemDBManager itemDBManager = new ItemDBManager();
+                itemDBManager.DeleteReview(sku, reviewUserId);
+                return 1;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+
+        public int InsertUpdateReview(Review review)
+        {
+            IItemDBManager itemDBManager = new ItemDBManager();
+            itemDBManager.InsertUpdateReview(review);
+            return 1;
+        }
     }
 }
