@@ -20,5 +20,10 @@ namespace Hangout.Models
         public int ReviewUserId { get; set; }
         public string Name { get; set; }
         public bool IsActive { get; set; }
+        public DateTime Date { get; set; }
+        public string Username { get; set; }
+        public string Vintage { get; set; }
+        public string Region { get; set; }
+        public string Country { get; set; }
     }
 }
