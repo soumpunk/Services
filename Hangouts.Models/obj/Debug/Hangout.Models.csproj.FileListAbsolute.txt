@@ -24,3 +24,4 @@ F:\SAVVY\Services\Services\Hangouts.Models\bin\Debug\Hangouts.Models.pdb
 F:\SAVVY\Services\Services\Hangouts.Models\obj\Debug\Hangout.Models.csprojResolveAssemblyReference.cache
 F:\SAVVY\Services\Services\Hangouts.Models\obj\Debug\Hangouts.Models.dll
 F:\SAVVY\Services\Services\Hangouts.Models\obj\Debug\Hangouts.Models.pdb
+C:\GIT\Services\Hangouts.Models\obj\Debug\Hangout.Models.csprojResolveAssemblyReference.cache

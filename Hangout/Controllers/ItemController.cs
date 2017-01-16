@@ -60,10 +60,12 @@ namespace Hangout.Controllers
         }
 
         [HttpGet]
-        public int AuthenticateUser(string objectId)
+        public UserResponse AuthenticateUser(string objectId)
         {
+            UserResponse resp = new UserResponse();
             IItemService itemService = new ItemService();
-            return (itemService.AuthenticateUser(objectId));
+            resp = itemService.AuthenticateUser(objectId);
+            return resp;
         }
 
         [HttpPost]

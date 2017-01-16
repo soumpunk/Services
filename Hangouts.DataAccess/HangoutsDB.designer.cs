@@ -90,13 +90,6 @@ namespace Hangouts.DataAccess
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AuthenticateUser")]
-		public ISingleResult<AuthenticateUserResult> AuthenticateUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(MAX)")] string name)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name);
-			return ((ISingleResult<AuthenticateUserResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveRatingsBySKU")]
 		public ISingleResult<RetrieveRatingsBySKUResult> RetrieveRatingsBySKU([global::System.Data.Linq.Mapping.ParameterAttribute(Name="SKU", DbType="Int")] System.Nullable<int> sKU)
 		{
@@ -116,6 +109,13 @@ namespace Hangouts.DataAccess
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sKU, reviewUserId);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.AuthenticateUser")]
+		public ISingleResult<AuthenticateUserResult> AuthenticateUser([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(MAX)")] string name)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name);
+			return ((ISingleResult<AuthenticateUserResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -773,32 +773,6 @@ namespace Hangouts.DataAccess
 		}
 	}
 	
-	public partial class AuthenticateUserResult
-	{
-		
-		private System.Nullable<int> _Column1;
-		
-		public AuthenticateUserResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
-		public System.Nullable<int> Column1
-		{
-			get
-			{
-				return this._Column1;
-			}
-			set
-			{
-				if ((this._Column1 != value))
-				{
-					this._Column1 = value;
-				}
-			}
-		}
-	}
-	
 	public partial class RetrieveRatingsBySKUResult
 	{
 		
@@ -964,6 +938,50 @@ namespace Hangouts.DataAccess
 				if ((this._Country != value))
 				{
 					this._Country = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuthenticateUserResult
+	{
+		
+		private int _UserID;
+		
+		private string _Name;
+		
+		public AuthenticateUserResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
 				}
 			}
 		}

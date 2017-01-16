@@ -75,24 +75,21 @@ namespace Hangouts.DataAccess
             }
         }
 
-        public int AuthenticateUser(string userName)
+        public IList<AuthenticateUserResult> AuthenticateUser(string userName)
         {
             try
             {
                 ISingleResult<AuthenticateUserResult> result = DBContext.AuthenticateUser(userName);
-                var res = result.ToList();
-                if (res.Any())
+                if (result != null)
                 {
-                    return res[0].Column1.Value;
+                    return result.ToList();
                 }
                 else
-                {
-                    return 0;
-                }
+                    return null;
             }
             catch (Exception ex)
             {
-                return 0;
+                return null;
             }
         }
 

@@ -121,10 +121,23 @@ namespace Hangouts.Business
             return (itemDBManager.InsertUpdateSKULike(skuLike));
         }
 
-        public int AuthenticateUser(string userName)
+        public UserResponse AuthenticateUser(string userName)
         {
+            UserResponse respObj = new UserResponse();
+            IList<Users> userObj = new List<Users>();
             IItemDBManager itemDBManager = new ItemDBManager();
-            return (itemDBManager.AuthenticateUser(userName));
+            IList<AuthenticateUserResult> resultObj = itemDBManager.AuthenticateUser(userName).ToList();
+            if (resultObj != null)
+                foreach (AuthenticateUserResult result in resultObj)
+                {
+                    userObj.Add(new Users
+                    {
+                        UserId = result.UserID,
+                        Name = result.Name
+                    });
+                }
+            respObj.users = userObj;
+            return respObj;
         }
 
         public ItemRatingResponse GetRatingsUID(int uid)
