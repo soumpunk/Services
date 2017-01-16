@@ -124,19 +124,19 @@ namespace Hangouts.Business
         public UserResponse AuthenticateUser(string userName)
         {
             UserResponse respObj = new UserResponse();
-            IList<Users> userObj = new List<Users>();
+            User userObj = new User();
             IItemDBManager itemDBManager = new ItemDBManager();
             IList<AuthenticateUserResult> resultObj = itemDBManager.AuthenticateUser(userName).ToList();
             if (resultObj != null)
                 foreach (AuthenticateUserResult result in resultObj)
                 {
-                    userObj.Add(new Users
+                    userObj = new User
                     {
                         UserId = result.UserID,
                         Name = result.Name
-                    });
+                    };
                 }
-            respObj.users = userObj;
+            respObj.user = userObj;
             return respObj;
         }
 

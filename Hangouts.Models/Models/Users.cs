@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hangout.Models
 {
-    public class Users
+    public class User
     {
         public int UserId { get; set; }
         public string Name { get; set; }

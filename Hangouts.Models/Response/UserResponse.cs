@@ -9,6 +9,6 @@ namespace Hangout.Models
 {
     public class UserResponse : BaseServiceResponse
     {
-        public IList<Users> users { get; set; }
+        public User user { get; set; }
     }
 }
