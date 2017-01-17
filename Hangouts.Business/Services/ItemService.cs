@@ -90,17 +90,17 @@ namespace Hangouts.Business
         }
 
 
-        public ItemRatingResponse GetRatingsSKU(int sku)
+        public ItemReviewResponse GetReviewsSKU(int sku)
         {
-            ItemRatingResponse itemRatingResponse = new ItemRatingResponse();
-            IList<Rating> raingList = new List<Rating>();
+            ItemReviewResponse itemReviewResponse = new ItemReviewResponse();
+            IList<Review> raingList = new List<Review>();
             IItemDBManager itemDBManager = new ItemDBManager();
-            IList<RetrieveRatingsBySKUResult> ratingsSKUresult = itemDBManager.GetRatingsSKU(sku).ToList();
-            foreach (RetrieveRatingsBySKUResult result in ratingsSKUresult)
+            IList<RetrieveReviewsBySKUResult> reviewsSKUresult = itemDBManager.GetReviewsSKU(sku).ToList();
+            foreach (RetrieveReviewsBySKUResult result in reviewsSKUresult)
             {
-                raingList.Add(new Rating
+                raingList.Add(new Review
                 {
-                    SKU = result.SKU.ToString(),
+                    SKU = Convert.ToInt32(result.SKU),
                     RatingStars = result.RatingStars,
                     Date = result.Date,
                     Username = result.UserName.ToString(),
@@ -111,8 +111,8 @@ namespace Hangouts.Business
                     RatingText = result.RatingText
                 });
             }
-            itemRatingResponse.Ratings = raingList;
-            return itemRatingResponse;
+            itemReviewResponse.Reviews = raingList;
+            return itemReviewResponse;
         }
 
         public int InsertUpdateSKULike(SKULike skuLike)
@@ -140,17 +140,17 @@ namespace Hangouts.Business
             return respObj;
         }
 
-        public ItemRatingResponse GetRatingsUID(int uid)
+        public ItemReviewResponse GetReviewsUID(int uid)
         {
-            ItemRatingResponse itemRatingResponse = new ItemRatingResponse();
-            IList<Rating> raingList = new List<Rating>();
+            ItemReviewResponse itemReviewResponse = new ItemReviewResponse();
+            IList<Review> raingList = new List<Review>();
             IItemDBManager itemDBManager = new ItemDBManager();
-            IList<RetrieveRatingsByUserIdResult> ratingsUserresult = itemDBManager.GetRatingsUID(uid).ToList();
-            foreach (RetrieveRatingsByUserIdResult result in ratingsUserresult)
+            IList<RetrieveReviewsByUserIdResult> reviewsUserresult = itemDBManager.GetReviewsUID(uid).ToList();
+            foreach (RetrieveReviewsByUserIdResult result in reviewsUserresult)
             {
-                raingList.Add(new Rating
+                raingList.Add(new Review
                 {
-                    SKU = result.SKU.ToString(),
+                    SKU = Convert.ToInt32(result.SKU),
                     RatingStars = result.RatingStars,
                     Date = result.Date,
                     Username = result.UserName.ToString(),
@@ -160,8 +160,8 @@ namespace Hangouts.Business
                     Country = result.Country
                 });
             }
-            itemRatingResponse.Ratings = raingList;
-            return itemRatingResponse;
+            itemReviewResponse.Reviews = raingList;
+            return itemReviewResponse;
         }
 
         public int DeleteReview(int sku, int reviewUserId)

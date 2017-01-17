@@ -53,6 +53,7 @@
     <Compile Include="Response\ItemListResponse.cs" />
     <Compile Include="Response\ItemRatingResponse.cs" />
     <Compile Include="Response\UserResponse.cs" />
+    <Compile Include="Response\ÌtemReviewResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Request\" />

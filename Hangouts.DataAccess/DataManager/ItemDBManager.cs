@@ -46,14 +46,14 @@ namespace Hangouts.DataAccess
             {
                 return null;
             }
-        }       
+        }
 
-        public IList<RetrieveRatingsBySKUResult> GetRatingsSKU(int sku)
+        public IList<RetrieveReviewsBySKUResult> GetReviewsSKU(int sku)
         {
             try
             {
-                ISingleResult<RetrieveRatingsBySKUResult> result =
-                DBContext.RetrieveRatingsBySKU(sku);
+                ISingleResult<RetrieveReviewsBySKUResult> result =
+                DBContext.RetrieveReviewsBySKU(sku);
                 return result.ToList();
             }
             catch (Exception ex)
@@ -93,12 +93,12 @@ namespace Hangouts.DataAccess
             }
         }
 
-        public IList<RetrieveRatingsByUserIdResult> GetRatingsUID(int uid)
+        public IList<RetrieveReviewsByUserIdResult> GetReviewsUID(int uid)
         {
             try
             {
-                ISingleResult<RetrieveRatingsByUserIdResult> result =
-                DBContext.RetrieveRatingsByUserId(uid);
+                ISingleResult<RetrieveReviewsByUserIdResult> result =
+                DBContext.RetrieveReviewsByUserId(uid);
                 return result.ToList();
             }
             catch (Exception ex)

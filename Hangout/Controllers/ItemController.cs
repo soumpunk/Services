@@ -29,20 +29,20 @@ namespace Hangout.Controllers
             return resp;
         }
         [HttpGet]
-        public ItemRatingResponse GetItemRatingsSKU(int objectId)
+        public ItemReviewResponse GetItemReviewsSKU(int objectId)
         {
-            ItemRatingResponse resp = new ItemRatingResponse();
+            ItemReviewResponse resp = new ItemReviewResponse();
             IItemService itemService = new ItemService();
-            resp = itemService.GetRatingsSKU(objectId);
+            resp = itemService.GetReviewsSKU(objectId);
             return resp;
         }
 
         [HttpGet]
-        public ItemRatingResponse GetItemRatingsUID(int objectId)
+        public ItemReviewResponse GetItemReviewsUID(int objectId)
         {
-            ItemRatingResponse resp = new ItemRatingResponse();
+            ItemReviewResponse resp = new ItemReviewResponse();
             IItemService itemService = new ItemService();
-            resp = itemService.GetRatingsUID(objectId);
+            resp = itemService.GetReviewsUID(objectId);
             return resp;
         }
 

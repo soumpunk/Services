@@ -11,8 +11,8 @@ namespace Hangouts.Business
     {
         ItemListResponse GetItemList(int plantFinal);
         ItemDetailsResponse GetItemDetails(int sku);
-        ItemRatingResponse GetRatingsSKU(int sku);
-        ItemRatingResponse GetRatingsUID(int uid);
+        ItemReviewResponse GetReviewsSKU(int sku);
+        ItemReviewResponse GetReviewsUID(int uid);
         int InsertUpdateSKULike(SKULike skuLike);
         UserResponse AuthenticateUser(string userName);
         int InsertUpdateReview(Review review);
