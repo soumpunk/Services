@@ -117,9 +117,11 @@
       <Column Name="RatingStars" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="RatingText" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="UserName" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReviewUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PlantFinal" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
       <Column Name="SKU" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="Vintage" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Region" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="Country" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />

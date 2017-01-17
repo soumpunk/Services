@@ -1180,7 +1180,11 @@ namespace Hangouts.DataAccess
 		
 		private System.DateTime _Date;
 		
-		private System.Nullable<int> _UserName;
+		private System.Nullable<int> _ReviewUserID;
+		
+		private string _UserName;
+		
+		private string _PlantFinal;
 		
 		private System.Nullable<int> _SKU;
 		
@@ -1244,8 +1248,24 @@ namespace Hangouts.DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="Int")]
-		public System.Nullable<int> UserName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ReviewUserID", DbType="Int")]
+		public System.Nullable<int> ReviewUserID
+		{
+			get
+			{
+				return this._ReviewUserID;
+			}
+			set
+			{
+				if ((this._ReviewUserID != value))
+				{
+					this._ReviewUserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="VarChar(50)")]
+		public string UserName
 		{
 			get
 			{
@@ -1256,6 +1276,22 @@ namespace Hangouts.DataAccess
 				if ((this._UserName != value))
 				{
 					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlantFinal", DbType="VarChar(4)")]
+		public string PlantFinal
+		{
+			get
+			{
+				return this._PlantFinal;
+			}
+			set
+			{
+				if ((this._PlantFinal != value))
+				{
+					this._PlantFinal = value;
 				}
 			}
 		}
@@ -1276,7 +1312,7 @@ namespace Hangouts.DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
 		public string Name
 		{
 			get

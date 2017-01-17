@@ -10,12 +10,12 @@ namespace Hangout.Models
     {
         public int ReviewID { get; set; }
         public string PlantFinal { get; set; }
-        public DateTime ReviewDate { get; set; }
         public int CardID { get; set; }
         public double Cost { get; set; }
+        public DateTime ReviewDate { get; set; }
+        public string CommentsTitle { get; set; }
         public int RatingStars { get; set; }
         public int SKU { get; set; }
-        public string CommentsTitle { get; set; }
         public string RatingText { get; set; }
         public int ReviewUserId { get; set; }
         public string Name { get; set; }
