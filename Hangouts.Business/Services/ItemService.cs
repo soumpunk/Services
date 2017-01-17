@@ -153,6 +153,7 @@ namespace Hangouts.Business
                     SKU = Convert.ToInt32(result.SKU),
                     RatingStars = result.RatingStars,
                     Date = result.Date,
+                    RatingText = result.RatingText,
                     Username = result.UserName.ToString(),
                     Name = result.Name,
                     Vintage = result.Vintage.ToString(),
