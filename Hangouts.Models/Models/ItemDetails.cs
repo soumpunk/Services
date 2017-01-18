@@ -14,7 +14,7 @@ namespace Hangout.Models
         public string LargeImageUrl { get; set; }
         public string Producer { get; set; }
         //public List<Review> Reviews { get; set; }
-        public List<Rating> Ratings { get; set; }
+        public List<Review> Reviews { get; set; }
         //Properties
         public Dictionary<string, string> WineProperties { get; set; }
         //public string Sub_Region { get; set; }
