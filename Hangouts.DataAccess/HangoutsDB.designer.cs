@@ -76,13 +76,6 @@ namespace Hangouts.DataAccess
 			return ((ISingleResult<RetrieveWineDetailsResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveAvailableWines")]
-		public ISingleResult<RetrieveAvailableWinesResult> RetrieveAvailableWines([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlantFinal", DbType="Int")] System.Nullable<int> plantFinal)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), plantFinal);
-			return ((ISingleResult<RetrieveAvailableWinesResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertUpdateLike")]
 		public int InsertUpdateLike([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SKU", DbType="Int")] System.Nullable<int> sKU, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Liked", DbType="Bit")] System.Nullable<bool> liked)
 		{
@@ -130,6 +123,13 @@ namespace Hangouts.DataAccess
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
 			return ((ISingleResult<RetrieveReviewsByUserIdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveAvailableWines")]
+		public ISingleResult<RetrieveAvailableWinesResult> RetrieveAvailableWines([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlantFinal", DbType="Int")] System.Nullable<int> plantFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> userid)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), plantFinal, userid);
+			return ((ISingleResult<RetrieveAvailableWinesResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -594,194 +594,6 @@ namespace Hangouts.DataAccess
 				if ((this._Liked != value))
 				{
 					this._Liked = value;
-				}
-			}
-		}
-	}
-	
-	public partial class RetrieveAvailableWinesResult
-	{
-		
-		private string _SKU;
-		
-		private string _Name;
-		
-		private short _Vintage;
-		
-		private string _Region;
-		
-		private string _Country;
-		
-		private System.Nullable<decimal> _SalePrice;
-		
-		private System.Nullable<decimal> _RegPrice;
-		
-		private System.Nullable<decimal> _AverageRating;
-		
-		private System.Nullable<bool> _Liked;
-		
-		private string _SmallImageURL;
-		
-		public RetrieveAvailableWinesResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SKU", DbType="NVarChar(50)")]
-		public string SKU
-		{
-			get
-			{
-				return this._SKU;
-			}
-			set
-			{
-				if ((this._SKU != value))
-				{
-					this._SKU = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(35) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this._Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vintage", DbType="SmallInt NOT NULL")]
-		public short Vintage
-		{
-			get
-			{
-				return this._Vintage;
-			}
-			set
-			{
-				if ((this._Vintage != value))
-				{
-					this._Vintage = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region", DbType="VarChar(150)")]
-		public string Region
-		{
-			get
-			{
-				return this._Region;
-			}
-			set
-			{
-				if ((this._Region != value))
-				{
-					this._Region = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="VarChar(50)")]
-		public string Country
-		{
-			get
-			{
-				return this._Country;
-			}
-			set
-			{
-				if ((this._Country != value))
-				{
-					this._Country = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalePrice", DbType="Decimal(3,2)")]
-		public System.Nullable<decimal> SalePrice
-		{
-			get
-			{
-				return this._SalePrice;
-			}
-			set
-			{
-				if ((this._SalePrice != value))
-				{
-					this._SalePrice = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegPrice", DbType="Decimal(3,2)")]
-		public System.Nullable<decimal> RegPrice
-		{
-			get
-			{
-				return this._RegPrice;
-			}
-			set
-			{
-				if ((this._RegPrice != value))
-				{
-					this._RegPrice = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AverageRating", DbType="Decimal(3,2)")]
-		public System.Nullable<decimal> AverageRating
-		{
-			get
-			{
-				return this._AverageRating;
-			}
-			set
-			{
-				if ((this._AverageRating != value))
-				{
-					this._AverageRating = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Liked", DbType="Bit")]
-		public System.Nullable<bool> Liked
-		{
-			get
-			{
-				return this._Liked;
-			}
-			set
-			{
-				if ((this._Liked != value))
-				{
-					this._Liked = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SmallImageURL", DbType="NVarChar(MAX)")]
-		public string SmallImageURL
-		{
-			get
-			{
-				return this._SmallImageURL;
-			}
-			set
-			{
-				if ((this._SmallImageURL != value))
-				{
-					this._SmallImageURL = value;
 				}
 			}
 		}
@@ -1372,6 +1184,194 @@ namespace Hangouts.DataAccess
 				if ((this._Country != value))
 				{
 					this._Country = value;
+				}
+			}
+		}
+	}
+	
+	public partial class RetrieveAvailableWinesResult
+	{
+		
+		private string _SKU;
+		
+		private string _Name;
+		
+		private short _Vintage;
+		
+		private string _Region;
+		
+		private string _Country;
+		
+		private decimal _SalePrice;
+		
+		private decimal _RegPrice;
+		
+		private decimal _AverageRating;
+		
+		private bool _Liked;
+		
+		private string _SmallImageURL;
+		
+		public RetrieveAvailableWinesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SKU", DbType="NVarChar(50)")]
+		public string SKU
+		{
+			get
+			{
+				return this._SKU;
+			}
+			set
+			{
+				if ((this._SKU != value))
+				{
+					this._SKU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(35) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vintage", DbType="SmallInt NOT NULL")]
+		public short Vintage
+		{
+			get
+			{
+				return this._Vintage;
+			}
+			set
+			{
+				if ((this._Vintage != value))
+				{
+					this._Vintage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region", DbType="VarChar(150)")]
+		public string Region
+		{
+			get
+			{
+				return this._Region;
+			}
+			set
+			{
+				if ((this._Region != value))
+				{
+					this._Region = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="VarChar(50)")]
+		public string Country
+		{
+			get
+			{
+				return this._Country;
+			}
+			set
+			{
+				if ((this._Country != value))
+				{
+					this._Country = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalePrice", DbType="Decimal(18,4) NOT NULL")]
+		public decimal SalePrice
+		{
+			get
+			{
+				return this._SalePrice;
+			}
+			set
+			{
+				if ((this._SalePrice != value))
+				{
+					this._SalePrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegPrice", DbType="Decimal(18,4) NOT NULL")]
+		public decimal RegPrice
+		{
+			get
+			{
+				return this._RegPrice;
+			}
+			set
+			{
+				if ((this._RegPrice != value))
+				{
+					this._RegPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AverageRating", DbType="Decimal(3,2) NOT NULL")]
+		public decimal AverageRating
+		{
+			get
+			{
+				return this._AverageRating;
+			}
+			set
+			{
+				if ((this._AverageRating != value))
+				{
+					this._AverageRating = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Liked", DbType="Bit NOT NULL")]
+		public bool Liked
+		{
+			get
+			{
+				return this._Liked;
+			}
+			set
+			{
+				if ((this._Liked != value))
+				{
+					this._Liked = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SmallImageURL", DbType="NVarChar(MAX)")]
+		public string SmallImageURL
+		{
+			get
+			{
+				return this._SmallImageURL;
+			}
+			set
+			{
+				if ((this._SmallImageURL != value))
+				{
+					this._SmallImageURL = value;
 				}
 			}
 		}

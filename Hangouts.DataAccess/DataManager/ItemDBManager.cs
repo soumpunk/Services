@@ -34,12 +34,12 @@ namespace Hangouts.DataAccess
             }
         }
 
-        public IList<RetrieveAvailableWinesResult> GetLists(int plantFinal)
+        public IList<RetrieveAvailableWinesResult> GetLists(int plantFinal,int userid)
         {
             try
             {
                 ISingleResult<RetrieveAvailableWinesResult> result =
-                DBContext.RetrieveAvailableWines(plantFinal);            
+                DBContext.RetrieveAvailableWines(plantFinal,userid);            
                 return result.ToList();
             }
             catch (Exception ex)

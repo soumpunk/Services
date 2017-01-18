@@ -10,12 +10,12 @@ namespace Hangouts.Business
 {
     public class ItemService : IItemService
     {
-        public ItemListResponse GetItemList(int plantFinal)
+        public ItemListResponse GetItemList(int plantFinal, int userid)
         {
             ItemListResponse itemListResponse = new ItemListResponse();
             List<Item> itemList = new List<Item>();
             IItemDBManager itemDBManager = new ItemDBManager();
-            IList<RetrieveAvailableWinesResult> wineResults = itemDBManager.GetLists(plantFinal).ToList();
+            IList<RetrieveAvailableWinesResult> wineResults = itemDBManager.GetLists(plantFinal,userid).ToList();
             foreach (RetrieveAvailableWinesResult result in wineResults)
             {
                 itemList.Add(new Item

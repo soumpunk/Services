@@ -13,11 +13,11 @@ namespace Hangout.Controllers
     {
 
         [HttpGet]
-        public ItemListResponse GetItemList(int objectId)
+        public ItemListResponse GetItemList(int objectId,int userid)
         {
             ItemListResponse resp = new ItemListResponse();
             IItemService itemService = new ItemService();
-            resp = itemService.GetItemList(objectId);
+            resp = itemService.GetItemList(objectId,userid);
             return resp;
         }
         [HttpGet]

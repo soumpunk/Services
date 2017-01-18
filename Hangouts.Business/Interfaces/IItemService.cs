@@ -9,7 +9,7 @@ namespace Hangouts.Business
 {
     public interface IItemService
     {
-        ItemListResponse GetItemList(int plantFinal);
+        ItemListResponse GetItemList(int plantFinal, int userid);
         ItemDetailsResponse GetItemDetails(int sku);
         ItemReviewResponse GetReviewsSKU(int sku);
         ItemReviewResponse GetReviewsUID(int uid);
