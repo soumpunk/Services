@@ -14,27 +14,6 @@
       <Column Name="Country" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.RetrieveWineDetails" Method="RetrieveWineDetails">
-    <Parameter Name="SKU" Parameter="sKU" Type="System.Int32" DbType="Int" />
-    <ElementType Name="RetrieveWineDetailsResult">
-      <Column Name="SKU" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="Vintage" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Country" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Region" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="[Sub-Region]" Member="Sub_Region" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="GrapeVerietal" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="Type" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="SalePrice" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
-      <Column Name="RegPrice" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
-      <Column Name="AverageRating" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
-      <Column Name="UsersRating" Type="System.Decimal" DbType="Decimal(3,2)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="BottleSize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="LargeImageUrl" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Liked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.InsertUpdateLike" Method="InsertUpdateLike">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
     <Parameter Name="SKU" Parameter="sKU" Type="System.Int32" DbType="Int" />
@@ -54,21 +33,6 @@
       <Column Name="Region" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="Country" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </ElementType>
-  </Function>
-  <Function Name="dbo.InsertUpdateReview" Method="InsertUpdateReview">
-    <Parameter Name="ReviewID" Parameter="reviewID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="PlantFinal" Parameter="plantFinal" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="ReviewDate" Parameter="reviewDate" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="CardID" Parameter="cardID" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Cost" Parameter="cost" Type="System.Decimal" DbType="Decimal(18,4)" />
-    <Parameter Name="RatingStars" Parameter="ratingStars" Type="System.Int32" DbType="Int" />
-    <Parameter Name="SKU" Parameter="sKU" Type="System.Int32" DbType="Int" />
-    <Parameter Name="CommentsTitle" Parameter="commentsTitle" Type="System.String" DbType="NVarChar(1)" />
-    <Parameter Name="RatingText" Parameter="ratingText" Type="System.String" DbType="NVarChar(1)" />
-    <Parameter Name="ReviewUserId" Parameter="reviewUserId" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(1)" />
-    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.DeleteReview" Method="DeleteReview">
     <Parameter Name="SKU" Parameter="sKU" Type="System.Int32" DbType="Int" />
@@ -126,6 +90,42 @@
       <Column Name="AverageRating" Type="System.Decimal" DbType="Decimal(3,2) NOT NULL" CanBeNull="false" />
       <Column Name="Liked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="SmallImageURL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertUpdateReview" Method="InsertUpdateReview">
+    <Parameter Name="ReviewID" Parameter="reviewID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PlantFinal" Parameter="plantFinal" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="ReviewDate" Parameter="reviewDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CardID" Parameter="cardID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Cost" Parameter="cost" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="RatingStars" Parameter="ratingStars" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SKU" Parameter="sKU" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CommentsTitle" Parameter="commentsTitle" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="RatingText" Parameter="ratingText" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="ReviewUserId" Parameter="reviewUserId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="IsActive" Parameter="isActive" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.RetrieveWineDetails" Method="RetrieveWineDetails">
+    <Parameter Name="SKU" Parameter="sKU" Type="System.Int32" DbType="Int" />
+    <ElementType Name="RetrieveWineDetailsResult">
+      <Column Name="SKU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Vintage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Region" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="[Sub-Region]" Member="Sub_Region" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="GrapeVerietal" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="SalePrice" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="RegPrice" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="AverageRating" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="UsersRating" Type="System.Decimal" DbType="Decimal(3,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="BottleSize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LargeImageUrl" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Liked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

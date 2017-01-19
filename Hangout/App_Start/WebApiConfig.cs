@@ -22,6 +22,11 @@ namespace Hangout
                 routeTemplate: "api/{controller}/{action}/{objectId}",
                 defaults: new { objectId = RouteParameter.Optional, custId = RouteParameter.Optional, cardId = RouteParameter.Optional }
             );
+            config.Routes.MapHttpRoute(
+               name: "DefaultApi2",
+               routeTemplate: "api/{controller}/{action}/{objectId}/user/{userid}",
+               defaults: new { objectId = RouteParameter.Optional, custId = RouteParameter.Optional, cardId = RouteParameter.Optional }
+           );
         }
     }
 }
