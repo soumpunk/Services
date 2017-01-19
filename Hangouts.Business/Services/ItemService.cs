@@ -14,6 +14,7 @@ namespace Hangouts.Business
         {
             ItemListResponse itemListResponse = new ItemListResponse();
             List<Item> itemList = new List<Item>();
+            
             IItemDBManager itemDBManager = new ItemDBManager();
             IList<RetrieveAvailableWinesResult> wineResults = itemDBManager.GetLists(plantFinal,userid).ToList();
             foreach (RetrieveAvailableWinesResult result in wineResults)
