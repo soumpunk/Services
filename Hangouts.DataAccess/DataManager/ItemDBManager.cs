@@ -144,5 +144,18 @@ namespace Hangouts.DataAccess
             }
         }
 
+        public IList<RetrieveFavouriteWinesByUserIdResult> GetItemFavsUID(int userId)
+        {
+            try {
+                ISingleResult<RetrieveFavouriteWinesByUserIdResult> result =
+                DBContext.RetrieveFavouriteWinesByUserId(userId);
+                return result.ToList();
+            }
+            catch(Exception ex)
+            {
+                return null;
+            }
+        }
+
     }
 }

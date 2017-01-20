@@ -187,5 +187,33 @@ namespace Hangouts.Business
             itemDBManager.InsertUpdateReview(review);
             return 1;
         }
+
+        public ItemDetailsResponse GetItemFavsUID(int userId)
+        {
+            ItemDetailsResponse respObj = new ItemDetailsResponse();
+            ItemDetails itemObj = new ItemDetails();
+
+            respObj.ItemDetails = itemObj;
+
+            IItemDBManager dbObj = new ItemDBManager();
+            IList<RetrieveFavouriteWinesByUserIdResult> wineDetailsObj = dbObj.GetItemFavsUID(userId);
+            if(wineDetailsObj.Any())
+            {
+                foreach(RetrieveFavouriteWinesByUserIdResult resultObj in wineDetailsObj)
+                {
+                    itemObj = new ItemDetails
+                    {
+                        SKU = resultObj.SKU.ToString(),
+                        Name = resultObj.Name,
+                        Vintage = resultObj.Vintage,
+                        SalePrice = Convert.ToDouble(resultObj.SalePrice),
+                        RegPrice = Convert.ToDouble(resultObj.RegPrice),
+                        IsLike = Convert.ToBoolean(resultObj.Liked)
+                    };
+                }
+                respObj.ItemDetails = itemObj;
+            }
+            return respObj;
+        }
     }
 }

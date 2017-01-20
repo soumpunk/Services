@@ -81,5 +81,14 @@ namespace Hangout.Controllers
             IItemService itemService = new ItemService();
             return (itemService.DeleteReview(review.SKU, review.ReviewUserId));
         }
+
+        [HttpGet]
+        public ItemDetailsResponse GetItemFavsUID(int objectId)
+        {
+            ItemDetailsResponse resp = new ItemDetailsResponse();
+            IItemService itemService = new ItemService();
+            resp = itemService.GetItemFavsUID(objectId);
+            return resp;
+        }
     }
 }
