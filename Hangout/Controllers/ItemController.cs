@@ -83,9 +83,9 @@ namespace Hangout.Controllers
         }
 
         [HttpGet]
-        public ItemDetailsResponse GetItemFavsUID(int objectId)
+        public ItemListResponse GetItemFavsUID(int objectId)
         {
-            ItemDetailsResponse resp = new ItemDetailsResponse();
+            ItemListResponse resp = new ItemListResponse();
             IItemService itemService = new ItemService();
             resp = itemService.GetItemFavsUID(objectId);
             return resp;

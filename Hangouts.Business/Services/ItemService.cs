@@ -188,12 +188,12 @@ namespace Hangouts.Business
             return 1;
         }
 
-        public ItemDetailsResponse GetItemFavsUID(int userId)
+        public ItemListResponse GetItemFavsUID(int userId)
         {
-            ItemDetailsResponse respObj = new ItemDetailsResponse();
-            ItemDetails itemObj = new ItemDetails();
+            ItemListResponse respObj = new ItemListResponse();
+            List<Item> itemObj = new List<Item>();
 
-            respObj.ItemDetails = itemObj;
+            respObj.ItemList = itemObj;
 
             IItemDBManager dbObj = new ItemDBManager();
             IList<RetrieveFavouriteWinesByUserIdResult> wineDetailsObj = dbObj.GetItemFavsUID(userId);
@@ -201,7 +201,7 @@ namespace Hangouts.Business
             {
                 foreach(RetrieveFavouriteWinesByUserIdResult resultObj in wineDetailsObj)
                 {
-                    itemObj = new ItemDetails
+                    itemObj.Add(new Item
                     {
                         SKU = resultObj.SKU.ToString(),
                         Name = resultObj.Name,
@@ -209,9 +209,9 @@ namespace Hangouts.Business
                         SalePrice = Convert.ToDouble(resultObj.SalePrice),
                         RegPrice = Convert.ToDouble(resultObj.RegPrice),
                         IsLike = Convert.ToBoolean(resultObj.Liked)
-                    };
+                    });
                 }
-                respObj.ItemDetails = itemObj;
+                respObj.ItemList = itemObj;
             }
             return respObj;
         }
