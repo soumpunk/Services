@@ -168,5 +168,28 @@ namespace Hangouts.DataAccess
                 return null;
             }
         }
+
+        public int UpdateCustomerDetails(Customer CustomerObj)
+        {
+            try
+            {
+                int result = DBContext.UpdateCustomers(CustomerObj.FirstName,
+                                                        CustomerObj.LastName,
+                                                        CustomerObj.PhoneNumber,
+                                                        CustomerObj.Phone2,
+                                                        CustomerObj.Email,
+                                                        CustomerObj.Address1,
+                                                        CustomerObj.Address2,
+                                                        CustomerObj.City,
+                                                        CustomerObj.State,
+                                                        CustomerObj.CustomerType,
+                                                        CustomerObj.CustomerID);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
     }
 }

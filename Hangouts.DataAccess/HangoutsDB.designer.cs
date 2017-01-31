@@ -145,6 +145,13 @@ namespace Hangouts.DataAccess
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), customerID);
 			return ((ISingleResult<RetrieveProfileDetailsResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateCustomers")]
+		public int UpdateCustomers([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FirstName", DbType="VarChar(MAX)")] string firstName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LastName", DbType="VarChar(MAX)")] string lastName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PhoneNumber", DbType="NVarChar(MAX)")] string phoneNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Phone2", DbType="NVarChar(100)")] string phone2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Email", DbType="NVarChar(100)")] string email, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address1", DbType="NVarChar(100)")] string address1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Address2", DbType="NVarChar(100)")] string address2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="City", DbType="NVarChar(50)")] string city, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="State", DbType="NVarChar(50)")] string state, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CustomerType", DbType="NVarChar(100)")] string customerType, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CustomerID", DbType="Int")] System.Nullable<int> customerID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), firstName, lastName, phoneNumber, phone2, email, address1, address2, city, state, customerType, customerID);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class RetrieveRatingsByUserIdResult

@@ -248,5 +248,12 @@ namespace Hangouts.Business
             respObj.customer = CustObj;
             return respObj;
         }
+
+        public int UpdateCustomer(Customer CustomerObj)
+        {
+            IItemDBManager itemDBManager = new ItemDBManager();
+            int ret = itemDBManager.UpdateCustomerDetails(CustomerObj);
+            return ret;
+        }
     }
 }

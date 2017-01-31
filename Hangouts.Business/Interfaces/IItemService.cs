@@ -18,6 +18,7 @@ namespace Hangouts.Business
         int InsertUpdateReview(Review review);
         int DeleteReview(int sku, int reviewUserId);
         ItemListResponse GetItemFavsUID(int userId);
-        CustomerResponse GetCustomerDetails(int CustomerID); 
+        CustomerResponse GetCustomerDetails(int CustomerID);
+        int UpdateCustomer(Customer CustomerObj); 
     }
 }

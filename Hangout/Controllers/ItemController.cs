@@ -99,5 +99,12 @@ namespace Hangout.Controllers
             resp = itemService.GetCustomerDetails(objectId);
             return resp;
         }
+
+        [HttpPost]
+        public int UpdateCustomer(Customer CustomerObj)
+        {
+            IItemService itemService = new ItemService();
+            return (itemService.UpdateCustomer(CustomerObj));
+        }
     }
 }
