@@ -157,5 +157,16 @@ namespace Hangouts.DataAccess
             }
         }
 
+        public IList<RetrieveProfileDetailsResult> GetCustomerDetails(int customerID)
+        {
+            try {
+                ISingleResult<RetrieveProfileDetailsResult> result =
+                DBContext.RetrieveProfileDetails(customerID);
+                return result.ToList();
+            }
+            catch(Exception ex) {
+                return null;
+            }
+        }
     }
 }

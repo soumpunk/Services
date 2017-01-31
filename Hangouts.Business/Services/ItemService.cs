@@ -14,9 +14,9 @@ namespace Hangouts.Business
         {
             ItemListResponse itemListResponse = new ItemListResponse();
             List<Item> itemList = new List<Item>();
-            
+
             IItemDBManager itemDBManager = new ItemDBManager();
-            IList<RetrieveAvailableWinesResult> wineResults = itemDBManager.GetLists(plantFinal,userid).ToList();
+            IList<RetrieveAvailableWinesResult> wineResults = itemDBManager.GetLists(plantFinal, userid).ToList();
             foreach (RetrieveAvailableWinesResult result in wineResults)
             {
                 itemList.Add(new Item
@@ -41,7 +41,7 @@ namespace Hangouts.Business
         {
             ItemDetailsResponse itemDetailsResponse = new ItemDetailsResponse();
             ItemDetails itemDetailsList = new ItemDetails();
-            
+
 
             itemDetailsResponse.ItemDetails = itemDetailsList;
 
@@ -49,7 +49,7 @@ namespace Hangouts.Business
 
             IItemDBManager itemDBManager = new ItemDBManager();
             IList<RetrieveWineDetailsResult> wineDetailsResults = itemDBManager.GetDetails(sku).ToList();
-        
+
             if (wineDetailsResults.Any())
             {
                 foreach (RetrieveWineDetailsResult result in wineDetailsResults)
@@ -197,9 +197,9 @@ namespace Hangouts.Business
 
             IItemDBManager dbObj = new ItemDBManager();
             IList<RetrieveFavouriteWinesByUserIdResult> wineDetailsObj = dbObj.GetItemFavsUID(userId);
-            if(wineDetailsObj.Any())
+            if (wineDetailsObj.Any())
             {
-                foreach(RetrieveFavouriteWinesByUserIdResult resultObj in wineDetailsObj)
+                foreach (RetrieveFavouriteWinesByUserIdResult resultObj in wineDetailsObj)
                 {
                     itemObj.Add(new Item
                     {
@@ -213,6 +213,39 @@ namespace Hangouts.Business
                 }
                 respObj.ItemList = itemObj;
             }
+            return respObj;
+        }
+        public CustomerResponse GetCustomerDetails(int CustomerID)
+        {
+            CustomerResponse respObj = new CustomerResponse();
+            Customer CustObj = new Customer();
+            respObj.customer = CustObj;
+            IItemDBManager dbObj = new ItemDBManager();
+            IList<RetrieveProfileDetailsResult> CustomerDetailsObj = dbObj.GetCustomerDetails(CustomerID);
+            if (CustomerDetailsObj != null)
+            {
+                foreach (RetrieveProfileDetailsResult result in CustomerDetailsObj)
+                {
+                    CustObj = new Customer
+                    {
+                        CustomerID = Convert.ToInt32(result.CustomerID),
+                        FirstName = result.FirstName,
+                        LastName = result.LastName,
+                        PhoneNumber = result.PhoneNumber,
+                        Phone2 = result.Phone2,
+                        Email = result.Email,
+                        Address1 = result.Address1,
+                        Address2 = result.Address2,
+                        City = result.City,
+                        State = result.State,
+                        CustomerType = result.CustomerType,
+                        CustsomerAdded = Convert.ToDateTime(result.CustomerAdded),
+                        CardNumber = result.CardNumber,
+                        Notes1 = result.Notes1
+                    };
+                }
+            }
+            respObj.customer = CustObj;
             return respObj;
         }
     }

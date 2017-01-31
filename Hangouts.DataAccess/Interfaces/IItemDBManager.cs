@@ -18,5 +18,6 @@ namespace Hangouts.DataAccess
         int InsertUpdateReview(Review review);
         int DeleteReview(int sku, int reviewUserId);
         IList<RetrieveFavouriteWinesByUserIdResult> GetItemFavsUID(int userId);
+        IList<RetrieveProfileDetailsResult> GetCustomerDetails(int customerid);
     }
 }

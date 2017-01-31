@@ -90,5 +90,14 @@ namespace Hangout.Controllers
             resp = itemService.GetItemFavsUID(objectId);
             return resp;
         }
+
+        [HttpGet]
+        public CustomerResponse GetCustomerDetails(int objectId)
+        {
+            CustomerResponse resp = new CustomerResponse();
+            IItemService itemService = new ItemService();
+            resp = itemService.GetCustomerDetails(objectId);
+            return resp;
+        }
     }
 }
