@@ -12,5 +12,6 @@ namespace Hangout.Models
         public int UserID { get; set; }
         public int SKU { get; set; }
         public bool Liked { get; set; }
+
     }
 }
