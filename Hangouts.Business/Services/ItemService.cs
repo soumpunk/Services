@@ -122,22 +122,22 @@ namespace Hangouts.Business
             return (itemDBManager.InsertUpdateSKULike(skuLike));
         }
 
-        public UserResponse AuthenticateUser(string userName)
+        public CustomerResponse AuthenticateUser(string userName)
         {
-            UserResponse respObj = new UserResponse();
-            User userObj = new User();
+            CustomerResponse respObj = new CustomerResponse();
+            Customer userObj = new Customer();
             IItemDBManager itemDBManager = new ItemDBManager();
             IList<AuthenticateUserResult> resultObj = itemDBManager.AuthenticateUser(userName).ToList();
             if (resultObj != null)
                 foreach (AuthenticateUserResult result in resultObj)
                 {
-                    userObj = new User
+                    userObj = new Customer
                     {
-                        UserId = result.UserID,
-                        Name = result.Name
+                        CustomerID = Convert.ToInt32(result.CustomerID),
+                        FirstName = result.FirstName
                     };
                 }
-            respObj.user = userObj;
+            respObj.customer = userObj;
             return respObj;
         }
 
@@ -254,6 +254,34 @@ namespace Hangouts.Business
             IItemDBManager itemDBManager = new ItemDBManager();
             int ret = itemDBManager.UpdateCustomerDetails(CustomerObj);
             return ret;
+        }
+
+        public ItemListResponse GetMyTastingsList(int customerID)
+        {
+            ItemListResponse respObj = new ItemListResponse();
+            List<Item> itemObj = new List<Item>();
+
+            respObj.ItemList = itemObj;
+
+            IItemDBManager dbObj = new ItemDBManager();
+            IList<RetrieveMyTastingsResult> wineDetailsObj = dbObj.GetMyTastings(customerID);
+            if (wineDetailsObj != null)
+            {
+                foreach (RetrieveMyTastingsResult resultObj in wineDetailsObj)
+                {
+                    itemObj.Add(new Item
+                    {
+                        SKU = resultObj.SKU.ToString(),
+                        Name = resultObj.Name,
+                        Vintage = Convert.ToInt32(resultObj.Vintage),
+                        SalePrice = Convert.ToDouble(resultObj.SalePrice),
+                        RegPrice = Convert.ToDouble(resultObj.RegPrice),
+                        Description = resultObj.Description
+                    });
+                }
+                respObj.ItemList = itemObj;
+            }
+            return respObj;
         }
     }
 }

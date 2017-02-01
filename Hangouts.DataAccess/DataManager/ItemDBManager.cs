@@ -191,5 +191,19 @@ namespace Hangouts.DataAccess
                 return 0;
             }
         }
+
+        public IList<RetrieveMyTastingsResult> GetMyTastings(int custID)
+        {
+            try
+            {
+                ISingleResult<RetrieveMyTastingsResult> result =
+                DBContext.RetrieveMyTastings(custID);
+                return result.ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

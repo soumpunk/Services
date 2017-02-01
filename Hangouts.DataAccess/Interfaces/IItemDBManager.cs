@@ -20,5 +20,6 @@ namespace Hangouts.DataAccess
         IList<RetrieveFavouriteWinesByUserIdResult> GetItemFavsUID(int userId);
         IList<RetrieveProfileDetailsResult> GetCustomerDetails(int customerid);
         int UpdateCustomerDetails(Customer customerObj);
+        IList<RetrieveMyTastingsResult> GetMyTastings(int custID);
     }
 }

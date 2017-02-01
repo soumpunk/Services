@@ -60,9 +60,9 @@ namespace Hangout.Controllers
         }
 
         [HttpGet]
-        public UserResponse AuthenticateUser(string objectId)
+        public CustomerResponse AuthenticateUser(string objectId)
         {
-            UserResponse resp = new UserResponse();
+            CustomerResponse resp = new CustomerResponse();
             IItemService itemService = new ItemService();
             resp = itemService.AuthenticateUser(objectId);
             return resp;
@@ -81,7 +81,6 @@ namespace Hangout.Controllers
             IItemService itemService = new ItemService();
             return (itemService.DeleteReview(review.SKU, review.ReviewUserId));
         }
-
         [HttpGet]
         public ItemListResponse GetItemFavsUID(int objectId)
         {
@@ -90,7 +89,6 @@ namespace Hangout.Controllers
             resp = itemService.GetItemFavsUID(objectId);
             return resp;
         }
-
         [HttpGet]
         public CustomerResponse GetCustomerDetails(int objectId)
         {
@@ -99,12 +97,19 @@ namespace Hangout.Controllers
             resp = itemService.GetCustomerDetails(objectId);
             return resp;
         }
-
         [HttpPost]
         public int UpdateCustomer(Customer CustomerObj)
         {
             IItemService itemService = new ItemService();
             return (itemService.UpdateCustomer(CustomerObj));
+        }
+        [HttpGet]
+        public ItemListResponse GetMyTastingsList(int objectId)
+        {
+            ItemListResponse resp = new ItemListResponse();
+            IItemService itemService = new ItemService();
+            resp = itemService.GetMyTastingsList(objectId);
+            return resp;
         }
     }
 }

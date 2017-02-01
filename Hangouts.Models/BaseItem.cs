@@ -18,5 +18,6 @@ namespace Hangout.Models
         public bool? IsLike { get; set; }
         public string SmallImageUrl { get; set; }
         public int Vintage { get; set; }
+        public string Description { get; set; }
     }
 }
