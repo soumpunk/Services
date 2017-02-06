@@ -2175,7 +2175,7 @@ namespace Hangouts.DataAccess
 		
 		private string _Name;
 		
-		private System.Nullable<int> _Vintage;
+		private short _Vintage;
 		
 		private string _Region;
 		
@@ -2299,7 +2299,7 @@ namespace Hangouts.DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(35) NOT NULL", CanBeNull=false)]
 		public string Name
 		{
 			get
@@ -2315,8 +2315,8 @@ namespace Hangouts.DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vintage", DbType="Int")]
-		public System.Nullable<int> Vintage
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vintage", DbType="SmallInt NOT NULL")]
+		public short Vintage
 		{
 			get
 			{
@@ -2331,7 +2331,7 @@ namespace Hangouts.DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string Region
 		{
 			get
@@ -2347,7 +2347,7 @@ namespace Hangouts.DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
 		public string Country
 		{
 			get
