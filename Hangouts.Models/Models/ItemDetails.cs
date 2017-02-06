@@ -10,7 +10,6 @@ namespace Hangout.Models
     {
         //public decimal AvgRating { get; set; } Already in Base Class
         public decimal UsersRating { get; set; }
-        public string Description { get; set; }
         public string LargeImageUrl { get; set; }
         public string Producer { get; set; }
         //public List<Review> Reviews { get; set; }

@@ -20,12 +20,12 @@ namespace Hangouts.DataAccess
             DBContext = new DataAccess.HangoutsDBDataContext(connection);
         }
 
-        public IList<RetrieveWineDetailsResult> GetDetails(int sku)
+        public IList<RetrieveWineDetailsResult> GetDetails(int WineId)
         {
             try
             {
                 ISingleResult<RetrieveWineDetailsResult> result =
-                DBContext.RetrieveWineDetails(sku);
+                DBContext.RetrieveWineDetails(WineId);
                 return result.ToList();
             }
             catch (Exception ex)
@@ -48,12 +48,12 @@ namespace Hangouts.DataAccess
             }
         }
 
-        public IList<RetrieveReviewsBySKUResult> GetReviewsSKU(int sku)
+        public IList<RetrieveReviewsByWineIdResult> GetReviewsWineID(int WineId)
         {
             try
             {
-                ISingleResult<RetrieveReviewsBySKUResult> result =
-                DBContext.RetrieveReviewsBySKU(sku);
+                ISingleResult<RetrieveReviewsByWineIdResult> result =
+                DBContext.RetrieveReviewsByWineId(WineId);
                 return result.ToList();
             }
             catch (Exception ex)
@@ -66,7 +66,7 @@ namespace Hangouts.DataAccess
         {
             try
             {
-                int result = DBContext.InsertUpdateLike(skuLike.UserID, skuLike.SKU, skuLike.Liked);
+                int result = DBContext.InsertUpdateLike(skuLike.UserID, skuLike.SKU, skuLike.Liked,skuLike.WineId);
                 return result;
             }
             catch (Exception ex)
@@ -122,7 +122,8 @@ namespace Hangouts.DataAccess
                                                           review.RatingText,
                                                           review.ReviewUserId,
                                                           review.Name,
-                                                          review.IsActive);
+                                                          review.IsActive,
+                                                          review.WineID);
                 return result;
             }
             catch (Exception ex)

@@ -30,14 +30,15 @@ namespace Hangouts.Business
                     AverageRating = Convert.ToDecimal(result.AverageRating),
                     IsLike = Convert.ToBoolean(result.Liked),
                     SmallImageUrl = result.SmallImageURL,
-                    Vintage = result.Vintage
+                    Vintage = result.Vintage,
+                    WineID = Convert.ToInt32(result.WineId)
                 });
             }
             itemListResponse.ItemList = itemList;
             return itemListResponse;
         }
 
-        public ItemDetailsResponse GetItemDetails(int sku)
+        public ItemDetailsResponse GetItemDetails(int WineId)
         {
             ItemDetailsResponse itemDetailsResponse = new ItemDetailsResponse();
             ItemDetails itemDetailsList = new ItemDetails();
@@ -48,7 +49,7 @@ namespace Hangouts.Business
             #region DB Interaction
 
             IItemDBManager itemDBManager = new ItemDBManager();
-            IList<RetrieveWineDetailsResult> wineDetailsResults = itemDBManager.GetDetails(sku).ToList();
+            IList<RetrieveWineDetailsResult> wineDetailsResults = itemDBManager.GetDetails(WineId).ToList();
 
             if (wineDetailsResults.Any())
             {
@@ -70,7 +71,8 @@ namespace Hangouts.Business
                         Vintage = Convert.ToInt32(result.Vintage),
                         UsersRating = Convert.ToDecimal(result.UsersRating),
                         Description = result.Description,
-                        WineProperties = new Dictionary<string, string>()
+                        WineProperties = new Dictionary<string, string>(),
+                        WineID = Convert.ToInt32(result.WineId)
                         //Type = result.Type,
                         //BottleSize = result.BottleSize.ToString(),
                         //Tasting_Notes = result.t,
@@ -91,19 +93,19 @@ namespace Hangouts.Business
         }
 
 
-        public ItemReviewResponse GetReviewsSKU(int sku)
+        public ItemReviewResponse GetReviewsWineID(int WineID)
         {
             ItemReviewResponse itemReviewResponse = new ItemReviewResponse();
             IList<Review> raingList = new List<Review>();
             IItemDBManager itemDBManager = new ItemDBManager();
-            IList<RetrieveReviewsBySKUResult> reviewsSKUresult = itemDBManager.GetReviewsSKU(sku).ToList();
-            foreach (RetrieveReviewsBySKUResult result in reviewsSKUresult)
+            IList<RetrieveReviewsByWineIdResult> reviewsSKUresult = itemDBManager.GetReviewsWineID(WineID).ToList();
+            foreach (RetrieveReviewsByWineIdResult result in reviewsSKUresult)
             {
                 raingList.Add(new Review
                 {
                     SKU = Convert.ToInt32(result.SKU),
                     RatingStars = result.RatingStars,
-                    Date = result.Date,
+                    Date = Convert.ToDateTime(result.Date),
                     Username = result.UserName.ToString(),
                     Name = result.Name,
                     Vintage = result.Vintage.ToString(),
@@ -153,14 +155,15 @@ namespace Hangouts.Business
                 {
                     SKU = Convert.ToInt32(result.SKU),
                     RatingStars = result.RatingStars,
-                    Date = result.Date,
+                    Date = Convert.ToDateTime(result.Date),
                     PlantFinal = result.PlantFinal,
                     RatingText = result.RatingText,
                     Username = result.UserName.ToString(),
                     Name = result.Name,
                     Vintage = result.Vintage.ToString(),
                     Region = result.Region,
-                    Country = result.Country
+                    Country = result.Country,
+                    WineID = result.WineID
                 });
             }
             itemReviewResponse.Reviews = raingList;
@@ -208,7 +211,8 @@ namespace Hangouts.Business
                         Vintage = resultObj.Vintage,
                         SalePrice = Convert.ToDouble(resultObj.SalePrice),
                         RegPrice = Convert.ToDouble(resultObj.RegPrice),
-                        IsLike = Convert.ToBoolean(resultObj.Liked)
+                        IsLike = Convert.ToBoolean(resultObj.Liked),
+                        WineID = Convert.ToInt32(resultObj.WineId)
                     });
                 }
                 respObj.ItemList = itemObj;

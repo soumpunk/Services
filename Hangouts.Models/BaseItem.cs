@@ -19,5 +19,6 @@ namespace Hangout.Models
         public string SmallImageUrl { get; set; }
         public int Vintage { get; set; }
         public string Description { get; set; }
+        public int WineID { get; set; }
     }
 }

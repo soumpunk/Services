@@ -33,5 +33,27 @@ namespace Hangouts.DataAccess.Properties {
                 return ((string)(this["HangoutsConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=108.58.151.10,1433;Initial Catalog=Hangouts_dev;Persist Security Info" +
+            "=True;User ID=ankur;Password=Ankur@3646")]
+        public string Hangouts_devConnectionString {
+            get {
+                return ((string)(this["Hangouts_devConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=108.58.151.10,1433;Initial Catalog=Hangouts;Persist Security Info=Tru" +
+            "e;User ID=ankur;Password=Ankur@3646")]
+        public string HangoutsConnectionString1 {
+            get {
+                return ((string)(this["HangoutsConnectionString1"]));
+            }
+        }
     }
 }

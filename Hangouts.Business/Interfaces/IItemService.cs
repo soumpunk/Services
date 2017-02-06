@@ -10,8 +10,8 @@ namespace Hangouts.Business
     public interface IItemService
     {
         ItemListResponse GetItemList(int plantFinal, int userid);
-        ItemDetailsResponse GetItemDetails(int sku);
-        ItemReviewResponse GetReviewsSKU(int sku);
+        ItemDetailsResponse GetItemDetails(int WineID);
+        ItemReviewResponse GetReviewsWineID(int WineId);
         ItemReviewResponse GetReviewsUID(int uid);
         int InsertUpdateSKULike(SKULike skuLike);
         CustomerResponse AuthenticateUser(string userName);

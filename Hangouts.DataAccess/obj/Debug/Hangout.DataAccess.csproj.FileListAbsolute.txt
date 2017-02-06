@@ -28,6 +28,7 @@ F:\SAVVY\Services\Services\Hangouts.DataAccess\bin\Debug\Hangouts.DataAccess.dll
 F:\SAVVY\Services\Services\Hangouts.DataAccess\bin\Debug\Hangouts.DataAccess.pdb
 F:\SAVVY\Services\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.dll
 F:\SAVVY\Services\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.pdb
+C:\GIT\Services\Hangouts.DataAccess\bin\Debug\Hangouts.DataAccess.dll.config
 C:\GIT\Services\Hangouts.DataAccess\bin\Debug\Hangouts.DataAccess.dll
 C:\GIT\Services\Hangouts.DataAccess\bin\Debug\Hangouts.DataAccess.pdb
 C:\GIT\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.dll
