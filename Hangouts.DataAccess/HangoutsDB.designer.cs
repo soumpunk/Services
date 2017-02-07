@@ -132,13 +132,6 @@ namespace Hangouts.DataAccess
 			return ((ISingleResult<RetrieveReviewsByWineIdResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertUpdateLike")]
-		public int InsertUpdateLike([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SKU", DbType="Int")] System.Nullable<int> sKU, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Liked", DbType="Bit")] System.Nullable<bool> liked, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WineID", DbType="Int")] System.Nullable<int> wineID)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, sKU, liked, wineID);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveAvailableWines")]
 		public ISingleResult<RetrieveAvailableWinesResult> RetrieveAvailableWines([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlantFinal", DbType="Int")] System.Nullable<int> plantFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> userid)
 		{
@@ -165,6 +158,13 @@ namespace Hangouts.DataAccess
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
 			return ((ISingleResult<RetrieveReviewsByUserIdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertUpdateLike")]
+		public int InsertUpdateLike([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="Int")] System.Nullable<int> userID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SKU", DbType="Int")] System.Nullable<int> sKU, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Liked", DbType="Bit")] System.Nullable<bool> liked, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WineID", DbType="Int")] System.Nullable<int> wineID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID, sKU, liked, wineID);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
