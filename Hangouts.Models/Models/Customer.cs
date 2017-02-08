@@ -22,5 +22,6 @@ namespace Hangout.Models
         public DateTime CustsomerAdded { get; set; }
         public string CardNumber { get; set; }
         public string Notes1 { get; set; }
+        public int IsUpdated { get; set; }
     }
 }

@@ -111,10 +111,10 @@ namespace Hangouts.DataAccess
         {
             try
             {
-                int result = DBContext.InsertUpdateReview(review.ReviewID,
+                int result = DBContext.InsertUpdateReview(review.ReviewId,
                                                           review.PlantFinal,
                                                           review.ReviewDate,
-                                                          review.CardID,
+                                                          review.CardId,
                                                           Convert.ToDecimal(review.Cost),
                                                           review.RatingStars,
                                                           review.SKU,
@@ -123,7 +123,7 @@ namespace Hangouts.DataAccess
                                                           review.ReviewUserId,
                                                           review.Name,
                                                           review.IsActive,
-                                                          review.WineID);
+                                                          review.WineId);
                 return result;
             }
             catch (Exception ex)
@@ -132,11 +132,11 @@ namespace Hangouts.DataAccess
             }
         }
 
-        public int DeleteReview(int sku, int reviewUserId)
+        public int DeleteReview(int WineId, int reviewUserId)
         {
             try
             {
-                int result = DBContext.DeleteReview(sku, reviewUserId);
+                int result = DBContext.DeleteReview(WineId, reviewUserId);
                 return result;
             }
             catch (Exception ex)

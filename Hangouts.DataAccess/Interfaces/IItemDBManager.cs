@@ -16,7 +16,7 @@ namespace Hangouts.DataAccess
         int InsertUpdateSKULike(SKULike skuLike);
         IList<AuthenticateUserResult> AuthenticateUser(string userName);
         int InsertUpdateReview(Review review);
-        int DeleteReview(int sku, int reviewUserId);
+        int DeleteReview(int WineId, int reviewUserId);
         IList<RetrieveFavouriteWinesByUserIdResult> GetItemFavsUID(int userId);
         IList<RetrieveProfileDetailsResult> GetCustomerDetails(int customerid);
         int UpdateCustomerDetails(Customer customerObj);

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Hangout.Models
 {
-    public class Item: BaseItem
+    public class Tastings : BaseItem
     {
-        public int DispenserCode { get; set; }
-        public int PositionTap { get; set; }
+        public DateTime TastingDate { get; set; }
     }
 }

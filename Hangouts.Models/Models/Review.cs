@@ -8,9 +8,9 @@ namespace Hangout.Models
 {
     public class Review
     {
-        public int ReviewID { get; set; }
+        public int ReviewId { get; set; }
         public string PlantFinal { get; set; }
-        public int CardID { get; set; }
+        public int CardId { get; set; }
         public double Cost { get; set; }
         public DateTime ReviewDate { get; set; }
         public string CommentsTitle { get; set; }
@@ -25,6 +25,6 @@ namespace Hangout.Models
         public string Vintage { get; set; }
         public string Region { get; set; }
         public string Country { get; set; }
-        public int WineID { get; set; }
+        public int WineId { get; set; }
     }
 }

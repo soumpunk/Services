@@ -79,7 +79,7 @@ namespace Hangout.Controllers
         public int DeleteReview(Review review)
         {
             IItemService itemService = new ItemService();
-            return (itemService.DeleteReview(review.SKU, review.ReviewUserId));
+            return (itemService.DeleteReview(review.WineId, review.ReviewUserId));
         }
         [HttpGet]
         public ItemListResponse GetItemFavsUID(int objectId)
@@ -104,9 +104,9 @@ namespace Hangout.Controllers
             return (itemService.UpdateCustomer(CustomerObj));
         }
         [HttpGet]
-        public ItemListResponse GetMyTastingsList(int objectId)
+        public TastingListResponse GetMyTastingsList(int objectId)
         {
-            ItemListResponse resp = new ItemListResponse();
+            TastingListResponse resp = new TastingListResponse();
             IItemService itemService = new ItemService();
             resp = itemService.GetMyTastingsList(objectId);
             return resp;

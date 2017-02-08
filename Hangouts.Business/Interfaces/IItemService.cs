@@ -16,10 +16,10 @@ namespace Hangouts.Business
         int InsertUpdateSKULike(SKULike skuLike);
         CustomerResponse AuthenticateUser(string userName);
         int InsertUpdateReview(Review review);
-        int DeleteReview(int sku, int reviewUserId);
+        int DeleteReview(int WineId, int reviewUserId);
         ItemListResponse GetItemFavsUID(int userId);
         CustomerResponse GetCustomerDetails(int CustomerID);
         int UpdateCustomer(Customer CustomerObj);
-        ItemListResponse GetMyTastingsList(int customerID);
+        TastingListResponse GetMyTastingsList(int customerID);
     }
 }
