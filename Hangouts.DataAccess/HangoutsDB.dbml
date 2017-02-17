@@ -110,18 +110,6 @@
     <Parameter Name="WineId" Parameter="wineId" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.RetrieveFavouriteWinesByUserId" Method="RetrieveFavouriteWinesByUserId">
-    <Parameter Name="userId" Type="System.Int32" DbType="Int" />
-    <ElementType Name="RetrieveFavouriteWinesByUserIdResult">
-      <Column Name="SKU" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
-      <Column Name="Vintage" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="SalePrice" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
-      <Column Name="RegPrice" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
-      <Column Name="Liked" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="WineId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.RetrieveWineDetails" Method="RetrieveWineDetails">
     <Parameter Name="WineID" Parameter="wineID" Type="System.Int32" DbType="Int" />
     <ElementType Name="RetrieveWineDetailsResult">
@@ -219,6 +207,19 @@
       <Column Name="WineId" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DispenserCode" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="PositionTap" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.RetrieveFavouriteWinesByUserId" Method="RetrieveFavouriteWinesByUserId">
+    <Parameter Name="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="RetrieveFavouriteWinesByUserIdResult">
+      <Column Name="SKU" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Vintage" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SalePrice" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="RegPrice" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Liked" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WineId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AverageRating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

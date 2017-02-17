@@ -217,7 +217,8 @@ namespace Hangouts.Business
                         SalePrice = Convert.ToDouble(resultObj.SalePrice),
                         RegPrice = Convert.ToDouble(resultObj.RegPrice),
                         IsLike = Convert.ToBoolean(resultObj.Liked),
-                        WineId = Convert.ToInt32(resultObj.WineId)
+                        WineId = Convert.ToInt32(resultObj.WineId),
+                        AverageRating = Convert.ToInt32(resultObj.AverageRating)
                     });
                 }
                 respObj.ItemList = itemObj;
