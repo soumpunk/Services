@@ -570,3 +570,5 @@ C:\GIT\Services\Hangout\bin\Hangouts.DataAccess.pdb
 C:\GIT\Services\Hangout\obj\Debug\Hangout.API.csprojResolveAssemblyReference.cache
 C:\GIT\Services\Hangout\obj\Debug\Hangout.dll
 C:\GIT\Services\Hangout\obj\Debug\Hangout.pdb
+E:\Sample\Services\Hangout\bin\Microsoft.ApplicationInsights.TraceListener.dll
+E:\Sample\Services\Hangout\bin\Microsoft.ApplicationInsights.TraceListener.xml

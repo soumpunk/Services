@@ -36,3 +36,4 @@ C:\GIT\Services\Hangouts.DataAccess\bin\Debug\Hangouts.Models.pdb
 C:\GIT\Services\Hangouts.DataAccess\obj\Debug\Hangout.DataAccess.csprojResolveAssemblyReference.cache
 C:\GIT\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.dll
 C:\GIT\Services\Hangouts.DataAccess\obj\Debug\Hangouts.DataAccess.pdb
+E:\Sample\Services\Hangouts.DataAccess\bin\Debug\Hangouts.DataAccess.dll.config
