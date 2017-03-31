@@ -33,7 +33,7 @@ namespace Hangouts.DataAccess
     #endregion
 		
 		public HangoutsDBDataContext() : 
-				base(global::Hangouts.DataAccess.Properties.Settings.Default.HangoutsConnectionString1, mappingSource)
+				base(global::Hangouts.DataAccess.Properties.Settings.Default.HangoutsConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -139,13 +139,6 @@ namespace Hangouts.DataAccess
 			return ((ISingleResult<RetrieveMyTastingsResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveAvailableWines")]
-		public ISingleResult<RetrieveAvailableWinesResult> RetrieveAvailableWines([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlantFinal", DbType="Int")] System.Nullable<int> plantFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> userid)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), plantFinal, userid);
-			return ((ISingleResult<RetrieveAvailableWinesResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveFavouriteWinesByUserId")]
 		public ISingleResult<RetrieveFavouriteWinesByUserIdResult> RetrieveFavouriteWinesByUserId([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> userId)
 		{
@@ -165,6 +158,13 @@ namespace Hangouts.DataAccess
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), customerID);
 			return ((ISingleResult<RetrieveProfileDetailsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.RetrieveAvailableWines")]
+		public ISingleResult<RetrieveAvailableWinesResult> RetrieveAvailableWines([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PlantFinal", DbType="Int")] System.Nullable<int> plantFinal, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> userid)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), plantFinal, userid);
+			return ((ISingleResult<RetrieveAvailableWinesResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1574,248 +1574,6 @@ namespace Hangouts.DataAccess
 		}
 	}
 	
-	public partial class RetrieveAvailableWinesResult
-	{
-		
-		private string _SKU;
-		
-		private string _Name;
-		
-		private short _Vintage;
-		
-		private string _Region;
-		
-		private string _Country;
-		
-		private decimal _SalePrice;
-		
-		private decimal _RegPrice;
-		
-		private int _AverageRating;
-		
-		private bool _Liked;
-		
-		private string _SmallImageURL;
-		
-		private System.Nullable<int> _WineId;
-		
-		private short _DispenserCode;
-		
-		private short _PositionTap;
-		
-		public RetrieveAvailableWinesResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SKU", DbType="NVarChar(50)")]
-		public string SKU
-		{
-			get
-			{
-				return this._SKU;
-			}
-			set
-			{
-				if ((this._SKU != value))
-				{
-					this._SKU = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(35) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this._Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vintage", DbType="SmallInt NOT NULL")]
-		public short Vintage
-		{
-			get
-			{
-				return this._Vintage;
-			}
-			set
-			{
-				if ((this._Vintage != value))
-				{
-					this._Vintage = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string Region
-		{
-			get
-			{
-				return this._Region;
-			}
-			set
-			{
-				if ((this._Region != value))
-				{
-					this._Region = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string Country
-		{
-			get
-			{
-				return this._Country;
-			}
-			set
-			{
-				if ((this._Country != value))
-				{
-					this._Country = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalePrice", DbType="Decimal(18,4) NOT NULL")]
-		public decimal SalePrice
-		{
-			get
-			{
-				return this._SalePrice;
-			}
-			set
-			{
-				if ((this._SalePrice != value))
-				{
-					this._SalePrice = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegPrice", DbType="Decimal(18,4) NOT NULL")]
-		public decimal RegPrice
-		{
-			get
-			{
-				return this._RegPrice;
-			}
-			set
-			{
-				if ((this._RegPrice != value))
-				{
-					this._RegPrice = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AverageRating", DbType="Int NOT NULL")]
-		public int AverageRating
-		{
-			get
-			{
-				return this._AverageRating;
-			}
-			set
-			{
-				if ((this._AverageRating != value))
-				{
-					this._AverageRating = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Liked", DbType="Bit NOT NULL")]
-		public bool Liked
-		{
-			get
-			{
-				return this._Liked;
-			}
-			set
-			{
-				if ((this._Liked != value))
-				{
-					this._Liked = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SmallImageURL", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string SmallImageURL
-		{
-			get
-			{
-				return this._SmallImageURL;
-			}
-			set
-			{
-				if ((this._SmallImageURL != value))
-				{
-					this._SmallImageURL = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WineId", DbType="Int")]
-		public System.Nullable<int> WineId
-		{
-			get
-			{
-				return this._WineId;
-			}
-			set
-			{
-				if ((this._WineId != value))
-				{
-					this._WineId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DispenserCode", DbType="SmallInt NOT NULL")]
-		public short DispenserCode
-		{
-			get
-			{
-				return this._DispenserCode;
-			}
-			set
-			{
-				if ((this._DispenserCode != value))
-				{
-					this._DispenserCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionTap", DbType="SmallInt NOT NULL")]
-		public short PositionTap
-		{
-			get
-			{
-				return this._PositionTap;
-			}
-			set
-			{
-				if ((this._PositionTap != value))
-				{
-					this._PositionTap = value;
-				}
-			}
-		}
-	}
-	
 	public partial class RetrieveFavouriteWinesByUserIdResult
 	{
 		
@@ -2555,6 +2313,248 @@ namespace Hangouts.DataAccess
 				if ((this._LastUpdatedOn != value))
 				{
 					this._LastUpdatedOn = value;
+				}
+			}
+		}
+	}
+	
+	public partial class RetrieveAvailableWinesResult
+	{
+		
+		private string _SKU;
+		
+		private string _Name;
+		
+		private short _Vintage;
+		
+		private string _Region;
+		
+		private string _Country;
+		
+		private decimal _SalePrice;
+		
+		private decimal _RegPrice;
+		
+		private System.Nullable<int> _AverageRating;
+		
+		private bool _Liked;
+		
+		private string _SmallImageURL;
+		
+		private int _WineId;
+		
+		private short _DispenserCode;
+		
+		private short _PositionTap;
+		
+		public RetrieveAvailableWinesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SKU", DbType="NVarChar(50)")]
+		public string SKU
+		{
+			get
+			{
+				return this._SKU;
+			}
+			set
+			{
+				if ((this._SKU != value))
+				{
+					this._SKU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(35) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vintage", DbType="SmallInt NOT NULL")]
+		public short Vintage
+		{
+			get
+			{
+				return this._Vintage;
+			}
+			set
+			{
+				if ((this._Vintage != value))
+				{
+					this._Vintage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Region", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string Region
+		{
+			get
+			{
+				return this._Region;
+			}
+			set
+			{
+				if ((this._Region != value))
+				{
+					this._Region = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string Country
+		{
+			get
+			{
+				return this._Country;
+			}
+			set
+			{
+				if ((this._Country != value))
+				{
+					this._Country = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SalePrice", DbType="Decimal(18,4) NOT NULL")]
+		public decimal SalePrice
+		{
+			get
+			{
+				return this._SalePrice;
+			}
+			set
+			{
+				if ((this._SalePrice != value))
+				{
+					this._SalePrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegPrice", DbType="Decimal(18,4) NOT NULL")]
+		public decimal RegPrice
+		{
+			get
+			{
+				return this._RegPrice;
+			}
+			set
+			{
+				if ((this._RegPrice != value))
+				{
+					this._RegPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AverageRating", DbType="Int")]
+		public System.Nullable<int> AverageRating
+		{
+			get
+			{
+				return this._AverageRating;
+			}
+			set
+			{
+				if ((this._AverageRating != value))
+				{
+					this._AverageRating = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Liked", DbType="Bit NOT NULL")]
+		public bool Liked
+		{
+			get
+			{
+				return this._Liked;
+			}
+			set
+			{
+				if ((this._Liked != value))
+				{
+					this._Liked = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SmallImageURL", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string SmallImageURL
+		{
+			get
+			{
+				return this._SmallImageURL;
+			}
+			set
+			{
+				if ((this._SmallImageURL != value))
+				{
+					this._SmallImageURL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WineId", DbType="Int NOT NULL")]
+		public int WineId
+		{
+			get
+			{
+				return this._WineId;
+			}
+			set
+			{
+				if ((this._WineId != value))
+				{
+					this._WineId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DispenserCode", DbType="SmallInt NOT NULL")]
+		public short DispenserCode
+		{
+			get
+			{
+				return this._DispenserCode;
+			}
+			set
+			{
+				if ((this._DispenserCode != value))
+				{
+					this._DispenserCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PositionTap", DbType="SmallInt NOT NULL")]
+		public short PositionTap
+		{
+			get
+			{
+				return this._PositionTap;
+			}
+			set
+			{
+				if ((this._PositionTap != value))
+				{
+					this._PositionTap = value;
 				}
 			}
 		}

@@ -39,3 +39,12 @@ C:\GIT\Services\Hangouts.Business\bin\Debug\Hangouts.Models.pdb
 C:\GIT\Services\Hangouts.Business\obj\Debug\Hangout.Business.csprojResolveAssemblyReference.cache
 C:\GIT\Services\Hangouts.Business\obj\Debug\Hangouts.Business.dll
 C:\GIT\Services\Hangouts.Business\obj\Debug\Hangouts.Business.pdb
+C:\Users\Savvy IT\Desktop\Services\Hangouts.Business\bin\Debug\Hangouts.Business.dll
+C:\Users\Savvy IT\Desktop\Services\Hangouts.Business\bin\Debug\Hangouts.Business.pdb
+C:\Users\Savvy IT\Desktop\Services\Hangouts.Business\bin\Debug\Hangouts.DataAccess.dll
+C:\Users\Savvy IT\Desktop\Services\Hangouts.Business\bin\Debug\Hangouts.Models.dll
+C:\Users\Savvy IT\Desktop\Services\Hangouts.Business\bin\Debug\Hangouts.DataAccess.pdb
+C:\Users\Savvy IT\Desktop\Services\Hangouts.Business\bin\Debug\Hangouts.Models.pdb
+C:\Users\Savvy IT\Desktop\Services\Hangouts.Business\obj\Debug\Hangout.Business.csprojResolveAssemblyReference.cache
+C:\Users\Savvy IT\Desktop\Services\Hangouts.Business\obj\Debug\Hangouts.Business.dll
+C:\Users\Savvy IT\Desktop\Services\Hangouts.Business\obj\Debug\Hangouts.Business.pdb

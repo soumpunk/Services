@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Hangouts" Class="HangoutsDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=108.58.151.10,1433;Initial Catalog=Hangouts;Persist Security Info=True;User ID=ankur" SettingsObjectName="Hangouts.DataAccess.Properties.Settings" SettingsPropertyName="HangoutsConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=108.58.151.10,1433;Initial Catalog=Hangouts;Persist Security Info=True;User ID=hangoutsadmin" SettingsObjectName="Hangouts.DataAccess.Properties.Settings" SettingsPropertyName="HangoutsConnectionString2" Provider="System.Data.SqlClient" />
   <Function Name="dbo.RetrieveRatingsByUserId" Method="RetrieveRatingsByUserId">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
     <ElementType Name="RetrieveRatingsByUserIdResult">
@@ -152,25 +152,6 @@
       <Column Name="TastingDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.RetrieveAvailableWines" Method="RetrieveAvailableWines">
-    <Parameter Name="PlantFinal" Parameter="plantFinal" Type="System.Int32" DbType="Int" />
-    <Parameter Name="userid" Type="System.Int32" DbType="Int" />
-    <ElementType Name="RetrieveAvailableWinesResult">
-      <Column Name="SKU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
-      <Column Name="Vintage" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="Region" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="Country" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="SalePrice" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
-      <Column Name="RegPrice" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
-      <Column Name="AverageRating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Liked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="SmallImageURL" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="WineId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DispenserCode" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="PositionTap" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.RetrieveFavouriteWinesByUserId" Method="RetrieveFavouriteWinesByUserId">
     <Parameter Name="userId" Type="System.Int32" DbType="Int" />
     <ElementType Name="RetrieveFavouriteWinesByUserIdResult">
@@ -224,6 +205,25 @@
       <Column Name="Notes1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="IsUpdated" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
       <Column Name="LastUpdatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.RetrieveAvailableWines" Method="RetrieveAvailableWines">
+    <Parameter Name="PlantFinal" Parameter="plantFinal" Type="System.Int32" DbType="Int" />
+    <Parameter Name="userid" Type="System.Int32" DbType="Int" />
+    <ElementType Name="RetrieveAvailableWinesResult">
+      <Column Name="SKU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Vintage" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Region" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SalePrice" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="RegPrice" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="AverageRating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Liked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SmallImageURL" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="WineId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DispenserCode" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="PositionTap" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>
