@@ -9,8 +9,15 @@ using Hangouts.Business;
 
 namespace Hangout.Controllers
 {
+    [Authorize]
     public class ItemController : ApiController
     {
+
+        [HttpGet]
+        public string TestService()
+        {
+            return "Ankur";
+        }
 
         [HttpGet]
         public ItemListResponse GetItemList(int objectId,int userid)
