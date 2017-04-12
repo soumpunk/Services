@@ -9,10 +9,10 @@ using Hangouts.Business;
 
 namespace Hangout.Controllers
 {
-    [Authorize]
+    
     public class ItemController : ApiController
     {
-
+        [Authorize]
         [HttpGet]
         public string TestService()
         {
