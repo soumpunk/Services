@@ -206,5 +206,18 @@ namespace Hangouts.DataAccess
                 return null;
             }
         }
+
+        public int UpdateDeviceToken(int CustId, string Devicetoken)
+        {
+            try
+            {
+                int result = DBContext.UpdateDeviceToken(CustId, Devicetoken);
+                return result;
+            }
+            catch(Exception ex)
+            {
+                return 0;
+            }
+        }
     }
 }

@@ -672,3 +672,4 @@ C:\Users\Savvy IT\Desktop\Services\Hangout\bin\Hangouts.DataAccess.pdb
 C:\Users\Savvy IT\Desktop\Services\Hangout\obj\Debug\Hangout.API.csprojResolveAssemblyReference.cache
 C:\Users\Savvy IT\Desktop\Services\Hangout\obj\Debug\Hangout.dll
 C:\Users\Savvy IT\Desktop\Services\Hangout\obj\Debug\Hangout.pdb
+C:\GIT\Services\Hangout\bin\Hangouts.DataAccess.dll.config

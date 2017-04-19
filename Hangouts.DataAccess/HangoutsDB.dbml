@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Hangouts" Class="HangoutsDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=108.58.151.10,1433;Initial Catalog=Hangouts;Persist Security Info=True;User ID=hangoutsadmin" SettingsObjectName="Hangouts.DataAccess.Properties.Settings" SettingsPropertyName="HangoutsConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=108.58.151.10,1433;Initial Catalog=Hangouts;Persist Security Info=True;User ID=ankur" SettingsObjectName="Hangouts.DataAccess.Properties.Settings" SettingsPropertyName="HangoutsConnectionString3" Provider="System.Data.SqlClient" />
   <Function Name="dbo.RetrieveRatingsByUserId" Method="RetrieveRatingsByUserId">
     <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
     <ElementType Name="RetrieveRatingsByUserIdResult">
@@ -225,5 +225,10 @@
       <Column Name="Liked" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="WineId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateDeviceToken" Method="UpdateDeviceToken">
+    <Parameter Name="CustomerId" Parameter="customerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="deviceToken" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

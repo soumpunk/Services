@@ -118,5 +118,12 @@ namespace Hangout.Controllers
             resp = itemService.GetMyTastingsList(objectId);
             return resp;
         }
+
+        [HttpPost]
+        public int UpdateDeviceToken(int objectId,string DeviceToken)
+        {
+            IItemService itemService = new ItemService();
+            return(itemService.UpdateDeviceToken(objectId,DeviceToken));            
+        }
     }
 }

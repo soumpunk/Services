@@ -294,5 +294,11 @@ namespace Hangouts.Business
             }
             return respObj;
         }
+        public int UpdateDeviceToken(int CustomerId, string DeviceToken)
+        {
+            IItemDBManager itemDBManager = new ItemDBManager();
+            int ret = itemDBManager.UpdateDeviceToken(CustomerId,DeviceToken);
+            return ret;
+        }
     }
 }

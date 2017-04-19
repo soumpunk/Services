@@ -21,5 +21,6 @@ namespace Hangouts.Business
         CustomerResponse GetCustomerDetails(int CustomerID);
         int UpdateCustomer(Customer CustomerObj);
         TastingListResponse GetMyTastingsList(int customerID);
+        int UpdateDeviceToken(int CustomerId, string DeviceToken);
     }
 }

@@ -33,7 +33,7 @@ namespace Hangouts.DataAccess
     #endregion
 		
 		public HangoutsDBDataContext() : 
-				base(global::Hangouts.DataAccess.Properties.Settings.Default.HangoutsConnectionString2, mappingSource)
+				base(global::Hangouts.DataAccess.Properties.Settings.Default.HangoutsConnectionString3, mappingSource)
 		{
 			OnCreated();
 		}
@@ -165,6 +165,13 @@ namespace Hangouts.DataAccess
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), wineID);
 			return ((ISingleResult<RetrieveWineDetailsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateDeviceToken")]
+		public int UpdateDeviceToken([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CustomerId", DbType="Int")] System.Nullable<int> customerId, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(MAX)")] string deviceToken)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), customerId, deviceToken);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	

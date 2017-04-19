@@ -48,3 +48,4 @@ C:\Users\Savvy IT\Desktop\Services\Hangouts.Business\bin\Debug\Hangouts.Models.p
 C:\Users\Savvy IT\Desktop\Services\Hangouts.Business\obj\Debug\Hangout.Business.csprojResolveAssemblyReference.cache
 C:\Users\Savvy IT\Desktop\Services\Hangouts.Business\obj\Debug\Hangouts.Business.dll
 C:\Users\Savvy IT\Desktop\Services\Hangouts.Business\obj\Debug\Hangouts.Business.pdb
+C:\GIT\Services\Hangouts.Business\bin\Debug\Hangouts.DataAccess.dll.config
