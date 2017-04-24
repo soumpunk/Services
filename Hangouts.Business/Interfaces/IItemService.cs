@@ -22,5 +22,8 @@ namespace Hangouts.Business
         int UpdateCustomer(Customer CustomerObj);
         TastingListResponse GetMyTastingsList(int customerID);
         int UpdateDeviceToken(int CustomerId, string DeviceToken);
+        int InsertActivationCode(string activationCode, string email);
+        int UpdateVerfiedEmail(string activationCode);
+        CustomerResponse AuthenticateUser1(string Email);
     }
 }

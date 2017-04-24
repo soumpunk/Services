@@ -67,6 +67,23 @@ namespace Hangout.Controllers
         }
 
         [HttpGet]
+        public CustomerResponse AuthenticateUser1(string objectId)
+        {
+            int response = 0; 
+            CustomerResponse resp = new CustomerResponse();
+            IItemService itemService = new ItemService();
+            resp = itemService.AuthenticateUser1(objectId);
+            string activationCode = Guid.NewGuid().ToString();
+            response = itemService.InsertActivationCode(activationCode, objectId);
+            if (response > 0)
+            {
+                SendEmail se = new SendEmail();
+                var result = se.SendOneEmail(activationCode, objectId);
+            }
+            return resp;
+        }
+
+        [HttpGet]
         public CustomerResponse AuthenticateUser(string objectId)
         {
             CustomerResponse resp = new CustomerResponse();
@@ -124,6 +141,13 @@ namespace Hangout.Controllers
         {
             IItemService itemService = new ItemService();
             return(itemService.UpdateDeviceToken(objectId,DeviceToken));            
+        }
+
+        [HttpGet]
+        public int UpdateVerifiedEmail(string objectId)
+        {
+            IItemService itemService = new ItemService();
+            return (itemService.UpdateVerfiedEmail(objectId));
         }
     }
 }

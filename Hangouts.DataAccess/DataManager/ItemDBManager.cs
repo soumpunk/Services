@@ -219,5 +219,46 @@ namespace Hangouts.DataAccess
                 return 0;
             }
         }
+        public IList<InsertActivationCodeResult> InsertActivationCode(string activationCode, string email)
+        {
+            try
+            {
+                ISingleResult<InsertActivationCodeResult> result = DBContext.InsertActivationCode(activationCode, email);
+                return result.ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        public int UpdateVerfiedEmail(string activationCode)
+        {
+            try
+            {
+                int result = DBContext.UpdateVerificationEmail(activationCode);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        public IList<AuthenticateUser1Result> AuthenticateUser1(string Email)
+        {
+            try
+            {
+                ISingleResult<AuthenticateUser1Result> result = DBContext.AuthenticateUser1(Email);
+                if (result != null)
+                {
+                    return result.ToList();
+                }
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

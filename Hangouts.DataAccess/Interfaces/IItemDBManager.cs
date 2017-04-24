@@ -22,5 +22,8 @@ namespace Hangouts.DataAccess
         int UpdateCustomerDetails(Customer customerObj);
         IList<RetrieveMyTastingsResult> GetMyTastings(int custID);
         int UpdateDeviceToken(int CustId, string Devicetoken);
+        IList<InsertActivationCodeResult> InsertActivationCode(string activationCode, string email);
+        int UpdateVerfiedEmail(string activationCode);
+        IList<AuthenticateUser1Result> AuthenticateUser1(string Email);
     }
 }

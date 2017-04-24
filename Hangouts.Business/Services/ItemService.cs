@@ -300,5 +300,41 @@ namespace Hangouts.Business
             int ret = itemDBManager.UpdateDeviceToken(CustomerId,DeviceToken);
             return ret;
         }
+
+        public int InsertActivationCode(string activationCode, string email)
+        {
+            int retObj = 0;
+            IItemDBManager itemDBManager = new ItemDBManager();
+            IList<InsertActivationCodeResult> resultObj = itemDBManager.InsertActivationCode(activationCode, email);
+            foreach (InsertActivationCodeResult i in resultObj)
+                retObj = i.RowCounts;
+            return retObj;
+        }
+
+        public int UpdateVerfiedEmail(string activationCode)
+        {
+            IItemDBManager itemDBManager = new ItemDBManager();
+            itemDBManager.UpdateVerfiedEmail(activationCode);
+            return 1;
+        }
+
+        public CustomerResponse AuthenticateUser1(string Email)
+        {
+            CustomerResponse respObj = new CustomerResponse();
+            Customer userObj = new Customer();
+            IItemDBManager itemDBManager = new ItemDBManager();
+            IList<AuthenticateUser1Result> resultObj = itemDBManager.AuthenticateUser1(Email).ToList();
+            if (resultObj != null)
+                foreach (AuthenticateUser1Result result in resultObj)
+                {
+                    userObj = new Customer
+                    {
+                        CustomerID = Convert.ToInt32(result.CustomerID),
+                        FirstName = result.FirstName
+                    };
+                }
+            respObj.customer = userObj;
+            return respObj;
+        }
     }
 }
