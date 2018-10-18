@@ -8,6 +8,7 @@ namespace Hangout.Models
 {
     public class SKULike
     {
+        
         public int LikeID { get; set; }
         public int UserID { get; set; }
         public int SKU { get; set; }
